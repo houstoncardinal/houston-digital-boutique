@@ -7,6 +7,7 @@ import { ServiceBanners } from "@/components/site/ServiceBanners";
 import { ServiceAreaMap } from "@/components/site/ServiceAreaMap";
 import { ProcessQuest } from "@/components/site/ProcessQuest";
 import { MiniGolf } from "@/components/site/MiniGolf";
+import { CinematicReel } from "@/components/site/CinematicReel";
 
 
 export const Route = createFileRoute("/")({
