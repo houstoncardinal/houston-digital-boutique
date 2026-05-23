@@ -119,7 +119,7 @@ export function ServicePage(p: ServicePageProps) {
           {p.pillars.map((pl) => (
             <article
               key={pl.n}
-              className="p-8 md:p-12 border-b md:[&:nth-last-child(-n+2)]:border-b-0 md:nth-child(odd):border-r border-border group"
+              className="p-8 md:p-12 border-b border-border md:odd:border-r last:border-b-0 group"
             >
               <div className="flex items-baseline gap-4 mb-6">
                 <span className="font-mono text-primary text-[11px] tracking-[0.3em]">{pl.n}</span>
