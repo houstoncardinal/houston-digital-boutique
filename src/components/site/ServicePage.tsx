@@ -224,9 +224,9 @@ export function ServicePage(p: ServicePageProps) {
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {p.related.map((r) => (
-            <Link
+            <a
               key={r.to}
-              to={r.to}
+              href={r.to}
               className="group block p-8 border border-border hover:border-primary transition-colors"
             >
               <div className="font-serif text-2xl md:text-3xl font-medium tracking-tight group-hover:text-primary transition-colors">
@@ -235,7 +235,7 @@ export function ServicePage(p: ServicePageProps) {
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mt-4">
                 {r.note} →
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </section>
