@@ -107,7 +107,7 @@ export const cities: CityData[] = [
     drive: "22 minutes from EaDo via US-59 / I-69.",
     geo: { lat: 29.6196, lng: -95.6349 },
     intro:
-      "Sugar Land is one of the fastest-growing affluent submarkets in Texas. We build apps, websites, and brand systems for the medical groups, professional services firms, and retail operators driving Fort Bend's expansion.",
+      "Sugar Land is one of the fastest-growing affluent submarkets in Texas. We build for the construction firms developing shopping centers across Sugar Land and Riverstone, the MRI clinics and physician groups along US-59, and the professional services firms anchoring Fort Bend's expansion.",
     economy:
       "A $30B+ submarket anchored by First Colony, Telfair, and Riverstone master-planned communities. High household income, demanding consumers, and a heavy concentration of physician-owned practices and franchise multi-unit operators.",
     whyUs:
