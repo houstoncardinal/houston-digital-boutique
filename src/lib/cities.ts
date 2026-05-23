@@ -239,7 +239,7 @@ export const cities: CityData[] = [
     drive: "25 minutes from EaDo via SH-288.",
     geo: { lat: 29.5636, lng: -95.2861 },
     intro:
-      "Pearland has become a multi-billion-dollar suburban economy of its own. We build digital products for the medical groups, property managers, and consumer brands operating along SH-288.",
+      "Pearland has become a multi-billion-dollar suburban economy of its own. We build for the MRI clinics, dental groups, and physician practices anchored to Memorial Hermann Pearland, plus the property managers and consumer brands scaling along SH-288.",
     economy:
       "Anchored by Memorial Hermann Pearland, the Pearland Town Center corridor, and a heavy concentration of medical, dental, and ambulatory care. One of the highest-growth zip code clusters in Texas.",
     whyUs:
