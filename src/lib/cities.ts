@@ -151,7 +151,7 @@ export const cities: CityData[] = [
     drive: "35 minutes from EaDo via I-45 North.",
     geo: { lat: 30.1658, lng: -95.4613 },
     intro:
-      "The Woodlands is a corporate-headquartered submarket with the design sensibilities of a luxury market. We build digital products for the HQs, professional firms, and boutique operators based here.",
+      "The Woodlands is a corporate-headquartered submarket with luxury-market design expectations. We build for the energy HQs, boutique law and wealth firms, and concept restaurants that hold the standard up here.",
     economy:
       "Home to ExxonMobil, Huntsman, Anadarko's successor entities, and dozens of Tier-1 energy and healthcare firms. A market that expects executive-grade design and zero tolerance for cheap-looking software.",
     whyUs:
