@@ -327,7 +327,7 @@ export const cities: CityData[] = [
     drive: "35 minutes from EaDo via US-290.",
     geo: { lat: 29.9691, lng: -95.6972 },
     intro:
-      "Cypress is the explosive Northwest Houston growth corridor — Bridgeland, Towne Lake, Cypress Creek Lakes, and a wave of new retail and healthcare expansion. We build for the operators capturing that demand.",
+      "Cypress is the explosive Northwest Houston growth corridor — Bridgeland, Towne Lake, and a wave of new healthcare, retail, and restaurant development. We build for the operators and developers planting flags before the corridor fills out.",
     economy:
       "One of the fastest-growing master-planned belts in the country. Young families, high household income, and operators racing to plant flags before the corridor fills out.",
     whyUs:
