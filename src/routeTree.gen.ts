@@ -11,12 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as HoustonRouteImport } from './routes/houston'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesWebsitesRouteImport } from './routes/services.websites'
 import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesMobileAppsRouteImport } from './routes/services.mobile-apps'
@@ -32,6 +32,11 @@ const WorkRoute = WorkRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HoustonRoute = HoustonRouteImport.update({
@@ -59,15 +64,10 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/services/',
-  path: '/services/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ServicesWebsitesRoute = ServicesWebsitesRouteImport.update({
-  id: '/services/websites',
-  path: '/services/websites',
-  getParentRoute: () => rootRouteImport,
+  id: '/websites',
+  path: '/websites',
+  getParentRoute: () => ServicesRoute,
 } as any)
 const ServicesSeoRoute = ServicesSeoRouteImport.update({
   id: '/seo',
@@ -75,19 +75,19 @@ const ServicesSeoRoute = ServicesSeoRouteImport.update({
   getParentRoute: () => ServicesRoute,
 } as any)
 const ServicesMobileAppsRoute = ServicesMobileAppsRouteImport.update({
-  id: '/services/mobile-apps',
-  path: '/services/mobile-apps',
-  getParentRoute: () => rootRouteImport,
+  id: '/mobile-apps',
+  path: '/mobile-apps',
+  getParentRoute: () => ServicesRoute,
 } as any)
 const ServicesCloudHostingRoute = ServicesCloudHostingRouteImport.update({
-  id: '/services/cloud-hosting',
-  path: '/services/cloud-hosting',
-  getParentRoute: () => rootRouteImport,
+  id: '/cloud-hosting',
+  path: '/cloud-hosting',
+  getParentRoute: () => ServicesRoute,
 } as any)
 const ServicesBrandingRoute = ServicesBrandingRouteImport.update({
-  id: '/services/branding',
-  path: '/services/branding',
-  getParentRoute: () => rootRouteImport,
+  id: '/branding',
+  path: '/branding',
+  getParentRoute: () => ServicesRoute,
 } as any)
 const HoustonCityRoute = HoustonCityRouteImport.update({
   id: '/$city',
@@ -101,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
   '/houston/$city': typeof HoustonCityRoute
@@ -109,7 +110,6 @@ export interface FileRoutesByFullPath {
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
-  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -117,6 +117,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
   '/houston/$city': typeof HoustonCityRoute
@@ -125,7 +126,6 @@ export interface FileRoutesByTo {
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
-  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -134,6 +134,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
   '/houston/$city': typeof HoustonCityRoute
@@ -142,7 +143,6 @@ export interface FileRoutesById {
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
-  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -152,6 +152,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/houston'
+    | '/services'
     | '/sitemap.xml'
     | '/work'
     | '/houston/$city'
@@ -160,7 +161,6 @@ export interface FileRouteTypes {
     | '/services/mobile-apps'
     | '/services/seo'
     | '/services/websites'
-    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -168,6 +168,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/houston'
+    | '/services'
     | '/sitemap.xml'
     | '/work'
     | '/houston/$city'
@@ -176,7 +177,6 @@ export interface FileRouteTypes {
     | '/services/mobile-apps'
     | '/services/seo'
     | '/services/websites'
-    | '/services'
   id:
     | '__root__'
     | '/'
@@ -184,6 +184,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/houston'
+    | '/services'
     | '/sitemap.xml'
     | '/work'
     | '/houston/$city'
@@ -192,7 +193,6 @@ export interface FileRouteTypes {
     | '/services/mobile-apps'
     | '/services/seo'
     | '/services/websites'
-    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -201,13 +201,9 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
   HoustonRoute: typeof HoustonRouteWithChildren
+  ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WorkRoute: typeof WorkRoute
-  ServicesBrandingRoute: typeof ServicesBrandingRoute
-  ServicesCloudHostingRoute: typeof ServicesCloudHostingRoute
-  ServicesMobileAppsRoute: typeof ServicesMobileAppsRoute
-  ServicesWebsitesRoute: typeof ServicesWebsitesRoute
-  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -224,6 +220,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/houston': {
@@ -261,19 +264,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/': {
-      id: '/services/'
-      path: '/services'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/services/websites': {
       id: '/services/websites'
-      path: '/services/websites'
+      path: '/websites'
       fullPath: '/services/websites'
       preLoaderRoute: typeof ServicesWebsitesRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/services/seo': {
       id: '/services/seo'
@@ -284,24 +280,24 @@ declare module '@tanstack/react-router' {
     }
     '/services/mobile-apps': {
       id: '/services/mobile-apps'
-      path: '/services/mobile-apps'
+      path: '/mobile-apps'
       fullPath: '/services/mobile-apps'
       preLoaderRoute: typeof ServicesMobileAppsRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/services/cloud-hosting': {
       id: '/services/cloud-hosting'
-      path: '/services/cloud-hosting'
+      path: '/cloud-hosting'
       fullPath: '/services/cloud-hosting'
       preLoaderRoute: typeof ServicesCloudHostingRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/services/branding': {
       id: '/services/branding'
-      path: '/services/branding'
+      path: '/branding'
       fullPath: '/services/branding'
       preLoaderRoute: typeof ServicesBrandingRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/houston/$city': {
       id: '/houston/$city'
@@ -324,19 +320,35 @@ const HoustonRouteChildren: HoustonRouteChildren = {
 const HoustonRouteWithChildren =
   HoustonRoute._addFileChildren(HoustonRouteChildren)
 
+interface ServicesRouteChildren {
+  ServicesBrandingRoute: typeof ServicesBrandingRoute
+  ServicesCloudHostingRoute: typeof ServicesCloudHostingRoute
+  ServicesMobileAppsRoute: typeof ServicesMobileAppsRoute
+  ServicesSeoRoute: typeof ServicesSeoRoute
+  ServicesWebsitesRoute: typeof ServicesWebsitesRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesBrandingRoute: ServicesBrandingRoute,
+  ServicesCloudHostingRoute: ServicesCloudHostingRoute,
+  ServicesMobileAppsRoute: ServicesMobileAppsRoute,
+  ServicesSeoRoute: ServicesSeoRoute,
+  ServicesWebsitesRoute: ServicesWebsitesRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
   HoustonRoute: HoustonRouteWithChildren,
+  ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WorkRoute: WorkRoute,
-  ServicesBrandingRoute: ServicesBrandingRoute,
-  ServicesCloudHostingRoute: ServicesCloudHostingRoute,
-  ServicesMobileAppsRoute: ServicesMobileAppsRoute,
-  ServicesWebsitesRoute: ServicesWebsitesRoute,
-  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
