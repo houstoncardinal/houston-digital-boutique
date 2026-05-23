@@ -96,28 +96,6 @@ function Index() {
       </section>
 
       <AtlasStoryScroll />
-
-
-      {/* CTA */}
-      <section className="px-5 sm:px-8 md:px-12 lg:px-16 py-20 sm:py-28 bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-7xl flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.98] tracking-[-0.02em] max-w-3xl text-balance">
-            Ready to <em className="italic">begin</em>?
-          </h2>
-          <div className="flex flex-col gap-6 max-w-md">
-            <p className="font-display text-base sm:text-lg font-medium leading-relaxed">
-              Tell us what you're building. We'll come back within one business day with a
-              scope, a rough timeline, and a price band.
-            </p>
-            <Link
-              to="/contact"
-              className="self-start inline-block px-8 py-5 bg-background text-foreground font-mono text-[11px] font-semibold uppercase tracking-[0.25em] hover:bg-foreground hover:text-background transition-colors"
-            >
-              Start a Project →
-            </Link>
-          </div>
-        </div>
-      </section>
     </SiteLayout>
   );
 }
