@@ -201,42 +201,81 @@ function Index() {
       {/* Intro / Hero */}
       <section
         id="intro"
-        className="relative px-6 md:px-10 pt-24 md:pt-36 pb-24 md:pb-36 border-b border-border overflow-hidden scroll-mt-24"
+        className="relative px-6 md:px-10 pt-28 md:pt-40 pb-28 md:pb-40 border-b border-border overflow-hidden scroll-mt-24"
       >
+        {/* Ambient luxury orbs */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-40 -left-40 h-[40rem] w-[40rem] rounded-full bg-primary/30 blur-[140px] animate-orb"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-40 right-0 h-[36rem] w-[36rem] rounded-full bg-primary/10 blur-[140px] animate-orb-alt"
+        />
         <img
           src={heroTexture}
           alt=""
           aria-hidden
-          className="absolute inset-0 h-full w-full object-cover opacity-25 pointer-events-none"
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.18] pointer-events-none mix-blend-luminosity"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/75 to-background pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background pointer-events-none" />
+
         <div className="relative max-w-7xl">
-          <div className="font-mono text-primary text-xs mb-8 animate-reveal">
-            HOUSTON, TX // EST. 2018 // LAT 29.7604°N // LON -95.3698°W
+          <div className="flex items-center gap-4 mb-10 animate-reveal">
+            <span className="block h-px w-12 bg-primary" />
+            <span className="font-mono text-primary text-[11px] tracking-[0.35em]">
+              HOUSTON · EST. 2018 · 29.7604°N
+            </span>
           </div>
-          <h1 className="text-[3rem] sm:text-7xl md:text-8xl lg:text-[10rem] font-extrabold tracking-tighter leading-[0.82] text-balance mb-10 animate-reveal [animation-delay:120ms]">
-            APPS. SITES. <br />
-            BRANDS. <br />
-            <span className="text-primary">BUILT IN HOUSTON.</span>
+
+          <h1 className="text-[3.25rem] sm:text-7xl md:text-8xl lg:text-[10.5rem] font-extrabold tracking-tighter leading-[0.82] text-balance mb-12">
+            <span className="mask-line"><span style={{ animationDelay: "0ms" }}>Apps.</span></span>{" "}
+            <span className="mask-line"><span style={{ animationDelay: "120ms" }}>Sites.</span></span>{" "}
+            <span className="mask-line"><span style={{ animationDelay: "240ms" }}>Brands.</span></span>
+            <br />
+            <span className="mask-line">
+              <span className="text-shimmer" style={{ animationDelay: "420ms" }}>
+                Built in Houston.
+              </span>
+            </span>
           </h1>
-          <p className="max-w-3xl text-lg md:text-2xl text-muted-foreground leading-relaxed animate-reveal [animation-delay:240ms]">
-            Forgeyard is a Houston studio designing, engineering, branding, hosting and
-            supporting mobile applications, websites and full digital products for business
-            owners across Texas — from solo founders to operators running fifty trucks.
-          </p>
-          <div className="mt-12 flex flex-wrap gap-4 animate-reveal [animation-delay:360ms]">
+
+          <Reveal delay={650} className="max-w-3xl">
+            <p className="text-lg md:text-2xl text-muted-foreground leading-relaxed">
+              Forgeyard is a Houston studio designing, engineering, branding, hosting and
+              supporting mobile applications, websites and full digital products for business
+              owners across Texas — from solo founders to operators running fifty trucks.
+            </p>
+          </Reveal>
+
+          <Reveal delay={820} className="mt-14 flex flex-wrap gap-4">
             <Link
               to="/contact"
-              className="px-8 py-5 bg-primary text-primary-foreground font-mono text-xs font-bold uppercase tracking-widest hover:bg-foreground hover:text-background transition-colors"
+              className="cta-lux px-9 py-5 bg-primary text-primary-foreground font-mono text-xs font-bold uppercase tracking-[0.25em] hover:bg-foreground hover:text-background transition-colors"
             >
-              Start a Project →
+              Commence a Build →
             </Link>
             <a
               href="#capabilities"
-              className="px-8 py-5 border border-border text-foreground font-mono text-xs font-bold uppercase tracking-widest hover:border-primary hover:text-primary transition-colors"
+              className="cta-lux px-9 py-5 border border-border text-foreground font-mono text-xs font-bold uppercase tracking-[0.25em] hover:border-primary hover:text-primary transition-colors"
             >
-              Walk the Yard
+              Walk the Yard ↓
             </a>
+          </Reveal>
+
+          {/* Hero meta strip */}
+          <div className="relative mt-24 pt-8 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-8 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+            {[
+              ["01", "Apps"],
+              ["02", "Websites"],
+              ["03", "Branding"],
+              ["04", "Cloud + Support"],
+            ].map(([n, l]) => (
+              <div key={n} className="flex items-baseline gap-3">
+                <span className="text-primary">{n}</span>
+                <span className="text-foreground">{l}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
