@@ -199,3 +199,75 @@
     radial-gradient(ellipse at 85% 90%, oklch(0.55 0.09 160 / 0.35) 0%, transparent 60%),
     var(--color-background);
 }
+
+/* ============== Mapbox service-area map ============== */
+.atlas-map .mapboxgl-ctrl-attrib,
+.atlas-map .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl {
+  background: rgba(20, 30, 28, 0.7);
+  color: oklch(0.8 0.02 168);
+}
+.atlas-map .mapboxgl-ctrl-attrib a { color: var(--color-primary); }
+.atlas-map .mapboxgl-ctrl-group {
+  background: rgba(20, 30, 28, 0.85);
+  border: 1px solid oklch(0.79 0.118 86 / 0.3);
+  backdrop-filter: blur(8px);
+}
+.atlas-map .mapboxgl-ctrl-group button { filter: invert(0.85) hue-rotate(40deg); }
+
+.atlas-map-marker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: transform 0.3s var(--ease-out-expo);
+}
+.atlas-map-marker:hover { transform: translateY(-4px); }
+.atlas-map-marker__ring {
+  position: absolute;
+  bottom: 22px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  opacity: 0.55;
+  animation: atlas-pulse 2.4s ease-out infinite;
+}
+.atlas-map-marker__dot {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow:
+    0 0 0 3px rgba(201, 168, 76, 0.25),
+    0 6px 18px rgba(0, 0, 0, 0.55);
+}
+.atlas-map-marker__label {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: oklch(0.95 0.02 90);
+  background: rgba(15, 24, 22, 0.9);
+  border: 1px solid oklch(0.79 0.118 86 / 0.5);
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+}
+.atlas-map-marker:hover .atlas-map-marker__label {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+@keyframes atlas-pulse {
+  0%   { transform: scale(0.6); opacity: 0.7; }
+  70%  { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
