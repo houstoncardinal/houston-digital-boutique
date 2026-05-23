@@ -145,6 +145,8 @@ function Index() {
 
       <ServiceBanners />
 
+      <CinematicReel />
+
       <ServiceAreaMap />
 
       <ProcessQuest />
