@@ -283,7 +283,7 @@ export const cities: CityData[] = [
     drive: "30 minutes from EaDo via I-45 / Hardy Toll.",
     geo: { lat: 30.0799, lng: -95.4172 },
     intro:
-      "Spring is where North Houston scales — the home-services, light-industrial, and field-ops backbone of the metro's northern arc. We build the software and brand systems those operators actually use.",
+      "Spring is where North Houston scales. We build for the apparel and clothing retailers opening flagship locations up here, the home-services and light-industrial operators running the northern arc, and the multi-site clinics serving Klein and Champions.",
     economy:
       "A mix of corporate satellites (HP, ExxonMobil adjacency), home services, light industrial, and rapidly expanding healthcare. Demand for line-of-business software and field-ready tools is high.",
     whyUs:
