@@ -150,7 +150,7 @@ export function AtlasStoryScroll() {
               <span className="block italic text-gold">Greater Houston.</span>
             </h2>
             <p className="mt-8 font-display text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              EaDo studio. On-site visits across the metro every week — from Sugar Land to
+              Based in Houston. On-site visits across the metro every week — from Sugar Land to
               The Woodlands, Katy to Pearland.
             </p>
           </div>
