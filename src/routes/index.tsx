@@ -5,6 +5,7 @@ import heroTexture from "@/assets/hero-texture.jpg";
 import { AtlasStoryScroll } from "@/components/site/AtlasStoryScroll";
 import { ServiceBanners } from "@/components/site/ServiceBanners";
 import { ServiceAreaMap } from "@/components/site/ServiceAreaMap";
+import { MiniGolf } from "@/components/site/MiniGolf";
 
 
 export const Route = createFileRoute("/")({
@@ -145,6 +146,8 @@ function Index() {
       <ServiceAreaMap />
 
       <AtlasStoryScroll />
+
+      <MiniGolf />
     </SiteLayout>
   );
 }
