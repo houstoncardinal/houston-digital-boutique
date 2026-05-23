@@ -246,16 +246,16 @@ function FrameCard({
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
       <div className="absolute inset-0 ring-1 ring-inset ring-gold/0 group-hover:ring-gold/40 transition-colors duration-700" />
-      <figcaption className="absolute bottom-0 left-0 right-0 p-5 sm:p-7 flex items-end justify-between gap-4">
-        <div>
-          <div className="font-mono text-[10px] tracking-[0.35em] uppercase text-gold mb-2">
+      <figcaption className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 flex items-end justify-between gap-3">
+        <div className="min-w-0">
+          <div className="font-mono text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-gold mb-2">
             {tag}
           </div>
-          <div className="font-serif text-xl sm:text-2xl md:text-3xl leading-tight text-foreground max-w-sm">
+          <div className="font-serif text-base sm:text-lg md:text-2xl leading-[1.15] text-foreground">
             {title}
           </div>
         </div>
-        <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-foreground/60 hidden sm:block">
+        <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-foreground/60 hidden md:block shrink-0">
           ↗ View
         </span>
       </figcaption>
