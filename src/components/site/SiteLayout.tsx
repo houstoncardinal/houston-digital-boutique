@@ -1,22 +1,26 @@
 import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { type ReactNode } from "react";
+import { ScrollProgress } from "./ScrollProgress";
 
 const navItems = [
   { to: "/services", label: "Services" },
   { to: "/work", label: "Work" },
-  { to: "/", label: "Houston", hash: "houston" },
   { to: "/contact", label: "Inquire" },
 ] as const;
 
 export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
-    <nav className="sticky top-0 z-40 flex items-center justify-between px-6 md:px-10 py-5 border-b border-border bg-background/80 backdrop-blur-md">
-      <Link to="/" className="flex items-center gap-3">
-        <span className="font-mono text-primary font-bold text-xs md:text-sm">[ ARC-03 ]</span>
-        <span className="font-extrabold tracking-tighter text-base md:text-xl">FORGEYARD HOUSTON</span>
+    <nav className="fixed top-0 inset-x-0 z-40 flex items-center justify-between px-6 md:px-10 py-5 border-b border-border/60 bg-background/60 backdrop-blur-xl">
+      <Link to="/" className="flex items-center gap-3 group">
+        <span className="font-mono text-primary font-bold text-xs md:text-sm tracking-widest transition-transform duration-700 group-hover:rotate-90 inline-block">
+          [ ✦ ]
+        </span>
+        <span className="font-extrabold tracking-tighter text-base md:text-xl">
+          FORGEYARD <span className="text-muted-foreground font-light">/ HOUSTON</span>
+        </span>
       </Link>
-      <div className="hidden md:flex gap-10 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+      <div className="hidden md:flex gap-10 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
         {navItems.map((item) => {
           const active = item.to === pathname;
           return (
@@ -25,11 +29,16 @@ export function SiteHeader() {
               to={item.to}
               className={
                 active
-                  ? "text-foreground border-b border-primary pb-1"
-                  : "hover:text-primary transition-colors"
+                  ? "text-foreground"
+                  : "hover:text-foreground transition-colors duration-500"
               }
             >
-              {item.label}
+              <span className="relative">
+                {item.label}
+                {active && (
+                  <span className="absolute -bottom-2 left-0 right-0 h-px bg-primary" />
+                )}
+              </span>
             </Link>
           );
         })}
@@ -46,36 +55,44 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="p-8 md:p-10 border-t border-border flex flex-col md:flex-row justify-between gap-8">
-      <div className="font-mono text-[10px] text-muted-foreground space-y-2 uppercase">
-        <p>&copy; {new Date().getFullYear()} Forgeyard Studio LLC</p>
-        <p>Made in Houston, Texas</p>
+    <footer className="px-6 md:px-10 py-16 border-t border-border">
+      <div className="grid md:grid-cols-12 gap-10">
+        <div className="md:col-span-6">
+          <div className="font-mono text-[10px] text-primary uppercase tracking-[0.3em] mb-6">
+            // Forgeyard Studio
+          </div>
+          <h3 className="text-4xl md:text-6xl font-extrabold tracking-tighter leading-[0.9]">
+            Built in Houston. <br /> Hosted by hand.
+          </h3>
+        </div>
+        <div className="md:col-span-3 font-mono text-[10px] text-muted-foreground space-y-3 uppercase tracking-[0.2em]">
+          <p className="text-foreground">Studio</p>
+          <p>2412 Navigation Blvd</p>
+          <p>EaDo, Houston TX 77003</p>
+          <p>+1 (713) 555 — 0188</p>
+        </div>
+        <div className="md:col-span-3 font-mono text-[10px] text-muted-foreground space-y-3 uppercase tracking-[0.2em]">
+          <p className="text-foreground">Channels</p>
+          <a href="#" className="block hover:text-primary transition-colors">Instagram ↗</a>
+          <a href="#" className="block hover:text-primary transition-colors">LinkedIn ↗</a>
+          <a href="#" className="block hover:text-primary transition-colors">Clutch.co ↗</a>
+          <a href="#" className="block hover:text-primary transition-colors">Dribbble ↗</a>
+        </div>
       </div>
-      <div className="font-mono text-[10px] text-muted-foreground flex gap-8 uppercase">
-        <a href="#" className="hover:text-primary">Instagram</a>
-        <a href="#" className="hover:text-primary">LinkedIn</a>
-        <a href="#" className="hover:text-primary">Clutch.co</a>
+      <div className="mt-16 pt-6 border-t border-border flex flex-col md:flex-row justify-between gap-4 font-mono text-[10px] text-muted-foreground uppercase tracking-[0.25em]">
+        <p>&copy; {new Date().getFullYear()} Forgeyard Studio LLC · All rights reserved</p>
+        <p>29.7604°N · 95.3698°W</p>
       </div>
     </footer>
   );
 }
 
-export function GridOverlay() {
-  return (
-    <>
-      <div className="pointer-events-none fixed top-0 left-1/4 w-px h-full bg-border/40 z-0" aria-hidden />
-      <div className="pointer-events-none fixed top-0 left-2/4 w-px h-full bg-border/40 z-0" aria-hidden />
-      <div className="pointer-events-none fixed top-0 left-3/4 w-px h-full bg-border/40 z-0" aria-hidden />
-    </>
-  );
-}
-
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-background text-foreground font-display">
-      <GridOverlay />
+    <div className="min-h-screen bg-background text-foreground font-display grain">
+      <ScrollProgress />
       <SiteHeader />
-      <main className="relative z-10">{children}</main>
+      <main className="relative z-10 pt-20">{children}</main>
       <SiteFooter />
     </div>
   );
