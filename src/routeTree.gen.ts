@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as HoustonRouteImport } from './routes/houston'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesWebsitesRouteImport } from './routes/services.websites'
@@ -19,6 +20,7 @@ import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesMobileAppsRouteImport } from './routes/services.mobile-apps'
 import { Route as ServicesCloudHostingRouteImport } from './routes/services.cloud-hosting'
 import { Route as ServicesBrandingRouteImport } from './routes/services.branding'
+import { Route as HoustonCityRouteImport } from './routes/houston.$city'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -33,6 +35,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HoustonRoute = HoustonRouteImport.update({
+  id: '/houston',
+  path: '/houston',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -70,13 +77,20 @@ const ServicesBrandingRoute = ServicesBrandingRouteImport.update({
   path: '/branding',
   getParentRoute: () => ServicesRoute,
 } as any)
+const HoustonCityRoute = HoustonCityRouteImport.update({
+  id: '/$city',
+  path: '/$city',
+  getParentRoute: () => HoustonRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/houston': typeof HoustonRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/houston/$city': typeof HoustonCityRoute
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
@@ -86,9 +100,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/houston': typeof HoustonRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/houston/$city': typeof HoustonCityRoute
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
@@ -99,9 +115,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/houston': typeof HoustonRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/houston/$city': typeof HoustonCityRoute
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
@@ -113,9 +131,11 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
+    | '/houston'
     | '/services'
     | '/sitemap.xml'
     | '/work'
+    | '/houston/$city'
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
@@ -125,9 +145,11 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/houston'
     | '/services'
     | '/sitemap.xml'
     | '/work'
+    | '/houston/$city'
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
@@ -137,9 +159,11 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
+    | '/houston'
     | '/services'
     | '/sitemap.xml'
     | '/work'
+    | '/houston/$city'
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
@@ -150,6 +174,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  HoustonRoute: typeof HoustonRouteWithChildren
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WorkRoute: typeof WorkRoute
@@ -176,6 +201,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/houston': {
+      id: '/houston'
+      path: '/houston'
+      fullPath: '/houston'
+      preLoaderRoute: typeof HoustonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -227,8 +259,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesBrandingRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/houston/$city': {
+      id: '/houston/$city'
+      path: '/$city'
+      fullPath: '/houston/$city'
+      preLoaderRoute: typeof HoustonCityRouteImport
+      parentRoute: typeof HoustonRoute
+    }
   }
 }
+
+interface HoustonRouteChildren {
+  HoustonCityRoute: typeof HoustonCityRoute
+}
+
+const HoustonRouteChildren: HoustonRouteChildren = {
+  HoustonCityRoute: HoustonCityRoute,
+}
+
+const HoustonRouteWithChildren =
+  HoustonRoute._addFileChildren(HoustonRouteChildren)
 
 interface ServicesRouteChildren {
   ServicesBrandingRoute: typeof ServicesBrandingRoute
@@ -253,6 +303,7 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  HoustonRoute: HoustonRouteWithChildren,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WorkRoute: WorkRoute,
@@ -260,3 +311,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

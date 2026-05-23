@@ -4,7 +4,7 @@ import { ScrollProgress } from "./ScrollProgress";
 
 const navItems = [
   { to: "/services", label: "Services" },
-  { to: "/services/seo", label: "SEO" },
+  { to: "/houston", label: "Houston" },
   { to: "/work", label: "Work" },
   { to: "/contact", label: "Inquire" },
 ] as const;
