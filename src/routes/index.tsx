@@ -2,11 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 import heroTexture from "@/assets/hero-texture.jpg";
-import capApps from "@/assets/cap-apps.jpg";
-import capWebsites from "@/assets/cap-websites.jpg";
-import capBranding from "@/assets/cap-branding.jpg";
-import capCloud from "@/assets/cap-cloud.jpg";
-import { cities } from "@/lib/cities";
+import { AtlasStoryScroll } from "@/components/site/AtlasStoryScroll";
+
 
 export const Route = createFileRoute("/")({
   component: Index,
