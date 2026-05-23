@@ -105,13 +105,13 @@ export const Route = createFileRoute("/services/mobile-apps")({
   ),
   head: () => ({
     meta: [
-      { title: "Mobile App Development in Houston | Forgeyard" },
+      { title: "Mobile App Development in Houston | Atlas Houston" },
       {
         name: "description",
         content:
           "Houston-based native iOS, native Android, and React Native app development. 60+ binaries shipped, HIPAA-ready, fixed-fee proposals. Senior team, full lifecycle.",
       },
-      { property: "og:title", content: "Mobile App Development — Forgeyard Houston" },
+      { property: "og:title", content: "Mobile App Development — Atlas Houston Houston" },
       {
         property: "og:description",
         content:

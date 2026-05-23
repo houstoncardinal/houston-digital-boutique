@@ -89,13 +89,13 @@ export const Route = createFileRoute("/services/cloud-hosting")({
   ),
   head: () => ({
     meta: [
-      { title: "Managed Cloud Hosting & Support in Houston | Forgeyard" },
+      { title: "Managed Cloud Hosting & Support in Houston | Atlas Houston" },
       {
         name: "description",
         content:
           "99.99% uptime, 24/7 on-call senior engineers in Houston, daily encrypted backups, SOC 2 controls, HIPAA BAA. Hosting that never goes dark.",
       },
-      { property: "og:title", content: "Cloud Hosting & LTS Support — Forgeyard Houston" },
+      { property: "og:title", content: "Cloud Hosting & LTS Support — Atlas Houston Houston" },
       {
         property: "og:description",
         content:

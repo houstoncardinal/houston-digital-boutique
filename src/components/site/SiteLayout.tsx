@@ -18,7 +18,7 @@ export function SiteHeader() {
           [ ✦ ]
         </span>
         <span className="font-extrabold tracking-tighter text-base md:text-xl">
-          FORGEYARD <span className="text-muted-foreground font-light">/ HOUSTON</span>
+          ATLAS HOUSTON <span className="text-muted-foreground font-light">/ HOUSTON</span>
         </span>
       </Link>
       <div className="hidden md:flex gap-10 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
@@ -60,7 +60,7 @@ export function SiteFooter() {
       <div className="grid md:grid-cols-12 gap-10">
         <div className="md:col-span-6">
           <div className="font-mono text-[10px] text-primary uppercase tracking-[0.3em] mb-6">
-            // Forgeyard Studio
+            // Atlas Houston Studio
           </div>
           <h3 className="text-4xl md:text-6xl font-extrabold tracking-tighter leading-[0.9]">
             Built in Houston. <br /> Hosted by hand.
@@ -81,7 +81,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mt-16 pt-6 border-t border-border flex flex-col md:flex-row justify-between gap-4 font-mono text-[10px] text-muted-foreground uppercase tracking-[0.25em]">
-        <p>&copy; {new Date().getFullYear()} Forgeyard Studio LLC · All rights reserved</p>
+        <p>&copy; {new Date().getFullYear()} Atlas Houston Studio LLC · All rights reserved</p>
         <p>29.7604°N · 95.3698°W</p>
       </div>
     </footer>

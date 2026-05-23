@@ -6,16 +6,16 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact — Start a Project | Forgeyard Houston" },
+      { title: "Contact — Start a Project | Atlas Houston Houston" },
       {
         name: "description",
         content:
           "Tell us about your website or mobile app. Houston-based studio, senior team, full-lifecycle ownership.",
       },
-      { property: "og:title", content: "Contact — Forgeyard Houston" },
+      { property: "og:title", content: "Contact — Atlas Houston Houston" },
       {
         property: "og:description",
-        content: "Start a project with the Forgeyard Houston team.",
+        content: "Start a project with the Atlas Houston Houston team.",
       },
       { property: "og:url", content: "/contact" },
     ],

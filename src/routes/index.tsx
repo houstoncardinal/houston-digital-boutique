@@ -15,13 +15,13 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Forgeyard Houston — Apps, Websites, Branding & Cloud for Texas Business" },
+      { title: "Atlas Houston Houston — Apps, Websites, Branding & Cloud for Texas Business" },
       {
         name: "description",
         content:
           "Houston design and engineering studio. We build, host, brand, and support mobile apps, websites, and digital products for business owners across Texas.",
       },
-      { property: "og:title", content: "Forgeyard Houston — Steel-grade digital products" },
+      { property: "og:title", content: "Atlas Houston Houston — Steel-grade digital products" },
       {
         property: "og:description",
         content:
@@ -242,7 +242,7 @@ function Index() {
 
           <Reveal delay={650} className="max-w-3xl">
             <p className="text-lg md:text-2xl text-muted-foreground leading-relaxed">
-              Forgeyard is a Houston studio designing, engineering, branding, hosting and
+              Atlas Houston is a Houston studio designing, engineering, branding, hosting and
               supporting mobile applications, websites and full digital products for business
               owners across Texas — from solo founders to operators running fifty trucks.
             </p>

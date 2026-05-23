@@ -6,13 +6,13 @@ export const Route = createFileRoute("/services")({
   component: ServicesHub,
   head: () => ({
     meta: [
-      { title: "Services — Apps, Websites, Branding, Cloud, SEO | Forgeyard Houston" },
+      { title: "Services — Apps, Websites, Branding, Cloud, SEO | Atlas Houston Houston" },
       {
         name: "description",
         content:
           "Five disciplines, one senior Houston team: mobile apps, websites, brand identity, managed cloud hosting, and engineered SEO. Full lifecycle, fixed-fee proposals.",
       },
-      { property: "og:title", content: "Services — Forgeyard Houston" },
+      { property: "og:title", content: "Services — Atlas Houston Houston" },
       {
         property: "og:description",
         content:
@@ -88,7 +88,7 @@ function ServicesHub() {
           </h1>
           <Reveal delay={400} className="max-w-3xl">
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
-              Forgeyard is a Houston design and engineering studio. We design the brand, build the
+              Atlas Houston is a Houston design and engineering studio. We design the brand, build the
               site and the app, host the infrastructure, and rank it on Google — under one roof,
               with one accountable team. Pick a discipline to read the long form.
             </p>
