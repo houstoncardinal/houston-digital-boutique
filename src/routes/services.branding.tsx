@@ -3,7 +3,7 @@ import { ServicePage } from "@/components/site/ServicePage";
 
 const faqs = [
   {
-    q: "What does a Forgeyard branding engagement actually include?",
+    q: "What does a Atlas Houston branding engagement actually include?",
     a: "At minimum: naming (when applicable), a primary wordmark or logo system, full color and typography systems with accessibility-tested contrast, voice and messaging guidelines, and a delivered Figma library plus a printable brand book. Most engagements extend into packaging, signage, vehicle livery, social templates, and a pitch-deck system. We don't sell a 'logo package' — we build identity systems that survive scale.",
   },
   {
@@ -90,13 +90,13 @@ export const Route = createFileRoute("/services/branding")({
   ),
   head: () => ({
     meta: [
-      { title: "Brand Identity Design in Houston | Forgeyard" },
+      { title: "Brand Identity Design in Houston | Atlas Houston" },
       {
         name: "description",
         content:
           "Houston branding studio. Naming, identity systems, packaging, signage, and digital rollout. Built for businesses that scale — not Behance.",
       },
-      { property: "og:title", content: "Brand Identity — Forgeyard Houston" },
+      { property: "og:title", content: "Brand Identity — Atlas Houston Houston" },
       {
         property: "og:description",
         content:

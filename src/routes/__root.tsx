@@ -72,14 +72,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Forgeyard Houston — Steel-grade web & mobile apps" },
+      { title: "Atlas Houston Houston — Steel-grade web & mobile apps" },
       {
         name: "description",
         content:
           "Houston design and engineering studio building, hosting, and supporting websites and mobile apps for business owners across Texas.",
       },
-      { name: "author", content: "Forgeyard Houston" },
-      { property: "og:site_name", content: "Forgeyard Houston" },
+      { name: "author", content: "Atlas Houston Houston" },
+      { property: "og:site_name", content: "Atlas Houston Houston" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0a1f17" },

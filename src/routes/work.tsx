@@ -7,13 +7,13 @@ export const Route = createFileRoute("/work")({
   component: WorkPage,
   head: () => ({
     meta: [
-      { title: "Work — Houston web & mobile builds | Forgeyard Houston" },
+      { title: "Work — Houston web & mobile builds | Atlas Houston Houston" },
       {
         name: "description",
         content:
           "Selected projects for Houston operators: dispatch dashboards, field-service mobile apps, energy IoT, and high-traffic e-commerce.",
       },
-      { property: "og:title", content: "Work — Forgeyard Houston" },
+      { property: "og:title", content: "Work — Atlas Houston Houston" },
       {
         property: "og:description",
         content: "A selection of recent web and mobile builds for Houston operators.",

@@ -89,13 +89,13 @@ export const Route = createFileRoute("/services/websites")({
   ),
   head: () => ({
     meta: [
-      { title: "Website Design & Development in Houston | Forgeyard" },
+      { title: "Website Design & Development in Houston | Atlas Houston" },
       {
         name: "description",
         content:
           "Custom website and web app development in Houston. React, Next.js, headless Shopify. WCAG 2.2 AA, Core Web Vitals-tuned, owned by you. Migrations welcome.",
       },
-      { property: "og:title", content: "Website Development — Forgeyard Houston" },
+      { property: "og:title", content: "Website Development — Atlas Houston Houston" },
       {
         property: "og:description",
         content:

@@ -49,13 +49,13 @@ export const Route = createFileRoute("/services/seo")({
   component: SeoPage,
   head: () => ({
     meta: [
-      { title: "Houston SEO Services — Rank on Google & AI Search | Forgeyard" },
+      { title: "Houston SEO Services — Rank on Google & AI Search | Atlas Houston" },
       {
         name: "description",
         content:
           "Houston SEO engineered by developers, not marketers. Technical SEO, Core Web Vitals, local pack, content strategy, and Generative Engine Optimization for ChatGPT, Perplexity, and Google AI Overviews.",
       },
-      { property: "og:title", content: "Houston SEO Services — Forgeyard" },
+      { property: "og:title", content: "Houston SEO Services — Atlas Houston" },
       {
         property: "og:description",
         content:
@@ -73,7 +73,7 @@ export const Route = createFileRoute("/services/seo")({
           serviceType: "Search Engine Optimization",
           provider: {
             "@type": "Organization",
-            name: "Forgeyard Houston",
+            name: "Atlas Houston Houston",
             areaServed: { "@type": "City", name: "Houston" },
           },
           description:
@@ -162,7 +162,7 @@ function SeoPage() {
         <div className="grid md:grid-cols-12 gap-10 max-w-7xl">
           <div className="md:col-span-4">
             <div className="font-mono text-[10px] text-primary uppercase tracking-[0.25em] mb-4">
-              // Why Forgeyard SEO is different
+              // Why Atlas Houston SEO is different
             </div>
             <h2 className="font-serif text-4xl md:text-6xl font-medium tracking-tight leading-[0.95]">
               SEO is engineering. We are engineers.
@@ -176,7 +176,7 @@ function SeoPage() {
               moved, and someone is asking why the retainer exists.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-[1.7] max-w-3xl">
-              Forgeyard is the developer{" "}
+              Atlas Houston is the developer{" "}
               <em className="text-foreground not-italic">and</em> the SEO team. We hold the
               codebase. We ship the schema, the redirects, the structured data, the rendered HTML,
               the image optimization, and the internal-link graph — same week. When Google rolls out
