@@ -56,9 +56,21 @@ function HoustonHub() {
             Built for <em className="text-gold italic">every corner</em> of Greater Houston.
           </h1>
           <p className="mt-8 font-display text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl">
-            Atlas Houston serves business owners across the metro. Pick your city for a
-            tailored breakdown of how we work in your market — industries, neighborhoods,
-            local case studies, and answers to the questions owners ask us most.
+            Atlas Houston serves business owners across the metro — from clothing stores in
+            North Houston and prestigious law firms downtown, to construction companies
+            building shopping centers in Sugar Land, Memorial, Galleria, Riverstone, and
+            River Oaks, to physician groups and MRI clinics across Fort Bend and Brazoria.
+            We're the Houston-rooted extension of{" "}
+            <a
+              href="https://www.visitcardinal.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold underline-offset-4 hover:underline"
+            >
+              Cardinal
+            </a>
+            , our partner studio serving clients nationwide. Pick your city below for a
+            tailored breakdown.
           </p>
         </div>
       </section>

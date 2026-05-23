@@ -63,7 +63,7 @@ export const cities: CityData[] = [
     drive: "Studio is on Navigation Blvd in EaDo — five minutes from Downtown.",
     geo: { lat: 29.7604, lng: -95.3698 },
     intro:
-      "Houston is our home market. We design and build digital products from a studio in EaDo for downtown firms, Inner Loop founders, and operators across Harris County.",
+      "Houston is our home market. From a studio in EaDo, we power prestigious downtown law firms, River Oaks and Memorial physician groups, and Inner Loop operators with the same caliber of digital work our partner studio, Cardinal, ships nationally.",
     economy:
       "Houston anchors a $700B regional economy — energy, healthcare, aerospace, the Port of Houston, and a fast-scaling startup corridor. Owners here expect software that performs like the rest of their operation.",
     whyUs:
@@ -107,7 +107,7 @@ export const cities: CityData[] = [
     drive: "22 minutes from EaDo via US-59 / I-69.",
     geo: { lat: 29.6196, lng: -95.6349 },
     intro:
-      "Sugar Land is one of the fastest-growing affluent submarkets in Texas. We build apps, websites, and brand systems for the medical groups, professional services firms, and retail operators driving Fort Bend's expansion.",
+      "Sugar Land is one of the fastest-growing affluent submarkets in Texas. We build for the construction firms developing shopping centers across Sugar Land and Riverstone, the MRI clinics and physician groups along US-59, and the professional services firms anchoring Fort Bend's expansion.",
     economy:
       "A $30B+ submarket anchored by First Colony, Telfair, and Riverstone master-planned communities. High household income, demanding consumers, and a heavy concentration of physician-owned practices and franchise multi-unit operators.",
     whyUs:
@@ -151,7 +151,7 @@ export const cities: CityData[] = [
     drive: "35 minutes from EaDo via I-45 North.",
     geo: { lat: 30.1658, lng: -95.4613 },
     intro:
-      "The Woodlands is a corporate-headquartered submarket with the design sensibilities of a luxury market. We build digital products for the HQs, professional firms, and boutique operators based here.",
+      "The Woodlands is a corporate-headquartered submarket with luxury-market design expectations. We build for the energy HQs, boutique law and wealth firms, and concept restaurants that hold the standard up here.",
     economy:
       "Home to ExxonMobil, Huntsman, Anadarko's successor entities, and dozens of Tier-1 energy and healthcare firms. A market that expects executive-grade design and zero tolerance for cheap-looking software.",
     whyUs:
@@ -195,7 +195,7 @@ export const cities: CityData[] = [
     drive: "30 minutes from EaDo via I-10 West.",
     geo: { lat: 29.7858, lng: -95.8244 },
     intro:
-      "Katy is the fastest-growing master-planned market west of Houston. We build software and brand systems for the youth-sports operators, home-services companies, and retail concepts riding that growth.",
+      "Katy is the fastest-growing master-planned market west of Houston. We build for the home-services operators running fifty-truck fleets out here, the retail concepts opening along LaCenterra, and the medical groups serving Cinco Ranch families.",
     economy:
       "Cinco Ranch, Cross Creek Ranch, and Cane Island anchor one of the most demographically attractive submarkets in the US — high household income, large young families, and explosive demand for services.",
     whyUs:
@@ -239,7 +239,7 @@ export const cities: CityData[] = [
     drive: "25 minutes from EaDo via SH-288.",
     geo: { lat: 29.5636, lng: -95.2861 },
     intro:
-      "Pearland has become a multi-billion-dollar suburban economy of its own. We build digital products for the medical groups, property managers, and consumer brands operating along SH-288.",
+      "Pearland has become a multi-billion-dollar suburban economy of its own. We build for the MRI clinics, dental groups, and physician practices anchored to Memorial Hermann Pearland, plus the property managers and consumer brands scaling along SH-288.",
     economy:
       "Anchored by Memorial Hermann Pearland, the Pearland Town Center corridor, and a heavy concentration of medical, dental, and ambulatory care. One of the highest-growth zip code clusters in Texas.",
     whyUs:
@@ -283,7 +283,7 @@ export const cities: CityData[] = [
     drive: "30 minutes from EaDo via I-45 / Hardy Toll.",
     geo: { lat: 30.0799, lng: -95.4172 },
     intro:
-      "Spring is where North Houston scales — the home-services, light-industrial, and field-ops backbone of the metro's northern arc. We build the software and brand systems those operators actually use.",
+      "Spring is where North Houston scales. We build for the apparel and clothing retailers opening flagship locations up here, the home-services and light-industrial operators running the northern arc, and the multi-site clinics serving Klein and Champions.",
     economy:
       "A mix of corporate satellites (HP, ExxonMobil adjacency), home services, light industrial, and rapidly expanding healthcare. Demand for line-of-business software and field-ready tools is high.",
     whyUs:
@@ -327,7 +327,7 @@ export const cities: CityData[] = [
     drive: "35 minutes from EaDo via US-290.",
     geo: { lat: 29.9691, lng: -95.6972 },
     intro:
-      "Cypress is the explosive Northwest Houston growth corridor — Bridgeland, Towne Lake, Cypress Creek Lakes, and a wave of new retail and healthcare expansion. We build for the operators capturing that demand.",
+      "Cypress is the explosive Northwest Houston growth corridor — Bridgeland, Towne Lake, and a wave of new healthcare, retail, and restaurant development. We build for the operators and developers planting flags before the corridor fills out.",
     economy:
       "One of the fastest-growing master-planned belts in the country. Young families, high household income, and operators racing to plant flags before the corridor fills out.",
     whyUs:
@@ -371,7 +371,7 @@ export const cities: CityData[] = [
     drive: "30 minutes from EaDo via Beltway 8 / SH-6.",
     geo: { lat: 29.6186, lng: -95.5377 },
     intro:
-      "Missouri City sits at the heart of one of the most diverse and economically active stretches of Fort Bend. We build for the medical, professional, and consumer brands serving the Sienna and Riverstone corridors.",
+      "Missouri City sits at the heart of one of the most diverse and economically active stretches of Fort Bend. We build for the construction firms developing along Riverstone, the medical and MRI clinics serving Sienna, and the professional brands operating Southwest Houston.",
     economy:
       "Anchored by Sienna, Riverstone, and Quail Valley. A high-income, professional, multi-cultural market with strong demand for healthcare, financial services, and lifestyle brands.",
     whyUs:
