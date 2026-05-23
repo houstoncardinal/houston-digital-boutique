@@ -160,7 +160,7 @@ export function CinematicReel() {
             offset={scrollY * -60}
             mouseX={mouse.x * 10}
             mouseY={mouse.y * 10}
-            className="col-span-12 sm:col-span-5 aspect-[3/4]"
+            className="col-span-12 sm:col-span-6 lg:col-span-5 aspect-[3/4]"
             tag="01 / Liquid"
             title="Gold-grade brand systems"
           />
