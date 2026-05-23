@@ -68,8 +68,7 @@ export function SiteFooter() {
         </div>
         <div className="md:col-span-3 font-mono text-[10px] text-muted-foreground space-y-3 uppercase tracking-[0.2em]">
           <p className="text-foreground">Studio</p>
-          <p>2412 Navigation Blvd</p>
-          <p>EaDo, Houston TX 77003</p>
+          <p>Houston, TX</p>
           <p>+1 (713) 555 — 0188</p>
         </div>
         <div className="md:col-span-3 font-mono text-[10px] text-muted-foreground space-y-3 uppercase tracking-[0.2em]">
