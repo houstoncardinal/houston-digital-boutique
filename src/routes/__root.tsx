@@ -83,6 +83,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0a1f17" },
+      { property: "og:title", content: "Atlas Houston Houston — Steel-grade web & mobile apps" },
+      { name: "twitter:title", content: "Atlas Houston Houston — Steel-grade web & mobile apps" },
+      { name: "description", content: "Atlas Houston designs, develops, hosts, and supports mobile apps and websites for businesses in Houston, Texas." },
+      { property: "og:description", content: "Atlas Houston designs, develops, hosts, and supports mobile apps and websites for businesses in Houston, Texas." },
+      { name: "twitter:description", content: "Atlas Houston designs, develops, hosts, and supports mobile apps and websites for businesses in Houston, Texas." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/767035c8-deb0-40d6-99d0-de39a5c3d251/id-preview-56a809a0--1a3e3f0f-e659-495d-ab50-cc1a946e92d2.lovable.app-1779555538272.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/767035c8-deb0-40d6-99d0-de39a5c3d251/id-preview-56a809a0--1a3e3f0f-e659-495d-ab50-cc1a946e92d2.lovable.app-1779555538272.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
