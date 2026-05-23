@@ -63,7 +63,7 @@ export const cities: CityData[] = [
     drive: "Studio is on Navigation Blvd in EaDo — five minutes from Downtown.",
     geo: { lat: 29.7604, lng: -95.3698 },
     intro:
-      "Houston is our home market. We design and build digital products from a studio in EaDo for downtown firms, Inner Loop founders, and operators across Harris County.",
+      "Houston is our home market. From a studio in EaDo, we power prestigious downtown law firms, River Oaks and Memorial physician groups, and Inner Loop operators with the same caliber of digital work our partner studio, Cardinal, ships nationally.",
     economy:
       "Houston anchors a $700B regional economy — energy, healthcare, aerospace, the Port of Houston, and a fast-scaling startup corridor. Owners here expect software that performs like the rest of their operation.",
     whyUs:
