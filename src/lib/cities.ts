@@ -195,7 +195,7 @@ export const cities: CityData[] = [
     drive: "30 minutes from EaDo via I-10 West.",
     geo: { lat: 29.7858, lng: -95.8244 },
     intro:
-      "Katy is the fastest-growing master-planned market west of Houston. We build software and brand systems for the youth-sports operators, home-services companies, and retail concepts riding that growth.",
+      "Katy is the fastest-growing master-planned market west of Houston. We build for the home-services operators running fifty-truck fleets out here, the retail concepts opening along LaCenterra, and the medical groups serving Cinco Ranch families.",
     economy:
       "Cinco Ranch, Cross Creek Ranch, and Cane Island anchor one of the most demographically attractive submarkets in the US — high household income, large young families, and explosive demand for services.",
     whyUs:
