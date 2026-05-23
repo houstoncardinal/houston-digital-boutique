@@ -382,15 +382,19 @@ function Index() {
 
       {/* Stats */}
       <section className="grid grid-cols-2 md:grid-cols-4 border-b border-border">
-        {stats.map((s) => (
-          <div key={s.l} className="p-8 md:p-12 border-b md:border-b-0 md:border-r last:border-r-0 border-border">
-            <div className="font-extrabold tracking-tighter text-5xl md:text-7xl text-foreground">
+        {stats.map((s, i) => (
+          <Reveal
+            key={s.l}
+            delay={i * 100}
+            className="p-8 md:p-14 border-b md:border-b-0 md:border-r last:border-r-0 border-border group"
+          >
+            <div className="font-extrabold tracking-tighter text-5xl md:text-8xl text-foreground transition-colors duration-700 group-hover:text-primary">
               {s.k}
             </div>
-            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-4">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mt-6">
               {s.l}
             </div>
-          </div>
+          </Reveal>
         ))}
       </section>
 
