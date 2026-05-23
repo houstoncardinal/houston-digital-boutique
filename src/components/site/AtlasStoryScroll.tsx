@@ -24,8 +24,8 @@ export function AtlasStoryScroll() {
               <span className="block">Partner-led work.</span>
             </h2>
             <p className="mt-8 font-display text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Atlas Houston is a thirteen-person design and engineering studio in EaDo. No
-              juniors on the wheel. Every engagement is owned by the partner who pitched it.
+              Atlas Houston is a thirteen-person design and engineering studio based in Houston, Texas.
+              No juniors on the wheel. Every engagement is owned by the partner who pitched it.
             </p>
           </div>
 
