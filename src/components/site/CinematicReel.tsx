@@ -160,7 +160,7 @@ export function CinematicReel() {
             offset={scrollY * -60}
             mouseX={mouse.x * 10}
             mouseY={mouse.y * 10}
-            className="col-span-12 sm:col-span-5 aspect-[3/4]"
+            className="col-span-12 sm:col-span-6 lg:col-span-5 aspect-[3/4]"
             tag="01 / Liquid"
             title="Gold-grade brand systems"
           />
@@ -169,7 +169,7 @@ export function CinematicReel() {
             offset={scrollY * -120}
             mouseX={mouse.x * -14}
             mouseY={mouse.y * -8}
-            className="col-span-12 sm:col-span-7 aspect-[16/10] sm:translate-y-12"
+            className="col-span-12 sm:col-span-6 lg:col-span-7 aspect-[16/10] sm:translate-y-12"
             tag="02 / Material"
             title="Architecture-first interfaces"
           />
@@ -246,18 +246,13 @@ function FrameCard({
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
       <div className="absolute inset-0 ring-1 ring-inset ring-gold/0 group-hover:ring-gold/40 transition-colors duration-700" />
-      <figcaption className="absolute bottom-0 left-0 right-0 p-5 sm:p-7 flex items-end justify-between gap-4">
-        <div>
-          <div className="font-mono text-[10px] tracking-[0.35em] uppercase text-gold mb-2">
-            {tag}
-          </div>
-          <div className="font-serif text-xl sm:text-2xl md:text-3xl leading-tight text-foreground max-w-sm">
-            {title}
-          </div>
+      <figcaption className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+        <div className="font-mono text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-gold mb-2">
+          {tag}
         </div>
-        <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-foreground/60 hidden sm:block">
-          ↗ View
-        </span>
+        <div className="font-serif text-lg sm:text-xl md:text-2xl lg:text-3xl leading-[1.1] text-foreground">
+          {title}
+        </div>
       </figcaption>
     </figure>
   );
