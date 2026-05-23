@@ -18,7 +18,7 @@ export function SiteHeader() {
           [ ✦ ]
         </span>
         <span className="font-extrabold tracking-tighter text-base md:text-xl">
-          ATLAS HOUSTON <span className="text-muted-foreground font-light">/ HOUSTON</span>
+          ATLAS <span className="text-muted-foreground font-light">/ HOUSTON</span>
         </span>
       </Link>
       <div className="hidden md:flex gap-10 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
