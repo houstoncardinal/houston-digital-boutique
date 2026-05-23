@@ -15,6 +15,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesWebsitesRouteImport } from './routes/services.websites'
+import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesMobileAppsRouteImport } from './routes/services.mobile-apps'
 import { Route as ServicesCloudHostingRouteImport } from './routes/services.cloud-hosting'
 import { Route as ServicesBrandingRouteImport } from './routes/services.branding'
@@ -49,6 +50,11 @@ const ServicesWebsitesRoute = ServicesWebsitesRouteImport.update({
   path: '/websites',
   getParentRoute: () => ServicesRoute,
 } as any)
+const ServicesSeoRoute = ServicesSeoRouteImport.update({
+  id: '/seo',
+  path: '/seo',
+  getParentRoute: () => ServicesRoute,
+} as any)
 const ServicesMobileAppsRoute = ServicesMobileAppsRouteImport.update({
   id: '/mobile-apps',
   path: '/mobile-apps',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
+  '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
+  '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
+  '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
+    | '/services/seo'
     | '/services/websites'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
+    | '/services/seo'
     | '/services/websites'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
+    | '/services/seo'
     | '/services/websites'
   fileRoutesById: FileRoutesById
 }
@@ -187,6 +199,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesWebsitesRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/services/seo': {
+      id: '/services/seo'
+      path: '/seo'
+      fullPath: '/services/seo'
+      preLoaderRoute: typeof ServicesSeoRouteImport
+      parentRoute: typeof ServicesRoute
+    }
     '/services/mobile-apps': {
       id: '/services/mobile-apps'
       path: '/mobile-apps'
@@ -215,6 +234,7 @@ interface ServicesRouteChildren {
   ServicesBrandingRoute: typeof ServicesBrandingRoute
   ServicesCloudHostingRoute: typeof ServicesCloudHostingRoute
   ServicesMobileAppsRoute: typeof ServicesMobileAppsRoute
+  ServicesSeoRoute: typeof ServicesSeoRoute
   ServicesWebsitesRoute: typeof ServicesWebsitesRoute
 }
 
@@ -222,6 +242,7 @@ const ServicesRouteChildren: ServicesRouteChildren = {
   ServicesBrandingRoute: ServicesBrandingRoute,
   ServicesCloudHostingRoute: ServicesCloudHostingRoute,
   ServicesMobileAppsRoute: ServicesMobileAppsRoute,
+  ServicesSeoRoute: ServicesSeoRoute,
   ServicesWebsitesRoute: ServicesWebsitesRoute,
 }
 
