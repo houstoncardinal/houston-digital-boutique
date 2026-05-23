@@ -371,7 +371,7 @@ export const cities: CityData[] = [
     drive: "30 minutes from EaDo via Beltway 8 / SH-6.",
     geo: { lat: 29.6186, lng: -95.5377 },
     intro:
-      "Missouri City sits at the heart of one of the most diverse and economically active stretches of Fort Bend. We build for the medical, professional, and consumer brands serving the Sienna and Riverstone corridors.",
+      "Missouri City sits at the heart of one of the most diverse and economically active stretches of Fort Bend. We build for the construction firms developing along Riverstone, the medical and MRI clinics serving Sienna, and the professional brands operating Southwest Houston.",
     economy:
       "Anchored by Sienna, Riverstone, and Quail Valley. A high-income, professional, multi-cultural market with strong demand for healthcare, financial services, and lifestyle brands.",
     whyUs:
