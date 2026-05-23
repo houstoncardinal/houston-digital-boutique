@@ -271,3 +271,10 @@
   70%  { transform: scale(1.6); opacity: 0; }
   100% { transform: scale(1.6); opacity: 0; }
 }
+
+@keyframes cinematic-drift {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate3d(-30px, -120vh, 0); opacity: 0; }
+}
