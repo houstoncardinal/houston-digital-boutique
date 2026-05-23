@@ -95,6 +95,8 @@ function Index() {
         </div>
       </section>
 
+      <ServiceBanners />
+
       <AtlasStoryScroll />
     </SiteLayout>
   );
