@@ -62,22 +62,21 @@ export function AtlasStoryScroll() {
 
           <div className="max-w-6xl">
             <h2 className="font-serif text-[2.4rem] sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              <span className="block">Apps. Websites.</span>
-              <span className="block italic text-gold">Brand. Cloud. SEO.</span>
+              <span className="block">Four services.</span>
+              <span className="block italic text-gold">Built to win Houston.</span>
             </h2>
             <p className="mt-8 font-display text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Five disciplines, one accountable team. We design the brand, ship the product,
-              host the infrastructure, and rank it on Google — under one roof.
+              Web development, app development, social media management, and video production —
+              delivered by one accountable Houston team.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border border border-border">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {[
-              ["Mobile Apps", "iOS · Android · RN"],
-              ["Websites", "Marketing · Portals"],
-              ["Branding", "Naming · Identity"],
-              ["Cloud", "Hosting · 24/7"],
-              ["SEO", "Local · Technical"],
+              ["Web Development", "Custom sites · Portals · E-commerce"],
+              ["App Development", "iOS · Android · React Native"],
+              ["Social Media", "Strategy · Content · Growth"],
+              ["Video Production", "Brand films · Ads · Reels"],
             ].map(([t, s]) => (
               <div key={t} className="bg-background p-5 sm:p-6">
                 <div className="font-serif text-xl sm:text-2xl">{t}</div>
