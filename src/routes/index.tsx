@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 import heroTexture from "@/assets/hero-texture.jpg";
 import { AtlasStoryScroll } from "@/components/site/AtlasStoryScroll";
+import { ServiceBanners } from "@/components/site/ServiceBanners";
 
 
 export const Route = createFileRoute("/")({
@@ -59,22 +60,21 @@ function Index() {
           </div>
 
           <h1 className="font-serif text-[2.6rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[8.5rem] leading-[0.96] tracking-[-0.02em] text-balance mb-8 sm:mb-10">
-            <span className="mask-line"><span style={{ animationDelay: "0ms" }}>We build websites,</span></span>
+            <span className="mask-line"><span style={{ animationDelay: "0ms" }}>Websites. Apps.</span></span>
             <br />
-            <span className="mask-line"><span style={{ animationDelay: "120ms" }}>apps, and brands</span></span>
+            <span className="mask-line"><span style={{ animationDelay: "120ms" }}>Social. Video.</span></span>
             <br />
             <span className="mask-line">
               <span className="italic text-gold" style={{ animationDelay: "240ms" }}>
-                for Texas business.
+                Built in Houston.
               </span>
             </span>
           </h1>
 
           <Reveal delay={420} className="max-w-2xl">
             <p className="font-display text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-              A senior Houston studio. We design, build, host, and support digital products for
-              owners across Greater Houston — apps for fifty-truck operations, sites for the
-              Med Center, brands for restaurants on Westheimer.
+              Atlas Houston is a senior team building powerful web development, app development,
+              social media management, and video production for Texas business owners.
             </p>
           </Reveal>
 
@@ -94,6 +94,8 @@ function Index() {
           </Reveal>
         </div>
       </section>
+
+      <ServiceBanners />
 
       <AtlasStoryScroll />
     </SiteLayout>

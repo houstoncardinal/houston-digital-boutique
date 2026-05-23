@@ -287,7 +287,7 @@ function CityPage() {
             </div>
             <p className="font-display text-base sm:text-lg text-muted-foreground leading-relaxed md:pt-12">
               Every engagement is delivered by the same in-house Atlas team — designers,
-              engineers, brand directors, and platform operators sitting in our EaDo studio.
+              engineers, brand directors, and platform operators based right here in Houston.
             </p>
           </div>
 

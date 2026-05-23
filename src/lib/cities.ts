@@ -57,13 +57,13 @@ export const cities: CityData[] = [
     slug: "houston",
     name: "Houston",
     shortName: "Houston",
-    region: "Inner Loop · Downtown · EaDo · Midtown",
+    region: "Inner Loop · Downtown · Midtown",
     population: "2.3M residents · 7.5M metro",
     zipPrefix: "770xx · 772xx",
-    drive: "Studio is on Navigation Blvd in EaDo — five minutes from Downtown.",
+    drive: "Based in Houston — minutes from Downtown and the Inner Loop.",
     geo: { lat: 29.7604, lng: -95.3698 },
     intro:
-      "Houston is our home market. From a studio in EaDo, we power prestigious downtown law firms, River Oaks and Memorial physician groups, and Inner Loop operators with the same caliber of digital work our partner studio, Cardinal, ships nationally.",
+      "Houston is our home market. From our Houston base, we power prestigious downtown law firms, River Oaks and Memorial physician groups, and Inner Loop operators with the same caliber of digital work our partner studio, Cardinal, ships nationally.",
     economy:
       "Houston anchors a $700B regional economy — energy, healthcare, aerospace, the Port of Houston, and a fast-scaling startup corridor. Owners here expect software that performs like the rest of their operation.",
     whyUs:
@@ -74,7 +74,7 @@ export const cities: CityData[] = [
       { name: "Legal & Professional Services", note: "Downtown firms, corporate counsel" },
       { name: "Hospitality & Retail", note: "Restaurant groups, boutique retail, events" },
     ],
-    neighborhoods: ["Downtown", "EaDo", "Midtown", "Heights", "Montrose", "Med Center", "River Oaks", "Memorial"],
+    neighborhoods: ["Downtown", "Midtown", "Heights", "Montrose", "Med Center", "River Oaks", "Memorial"],
     services: sharedServices,
     caseStudy: {
       client: "Bayou Logistics — Port of Houston freight broker",
@@ -85,7 +85,7 @@ export const cities: CityData[] = [
     faqs: [
       {
         q: "Do you only work with Houston businesses?",
-        a: "Most clients are within Beltway 8, but we serve all of Greater Houston and ship for owners across Texas. Our studio is in EaDo, which means on-site discovery for anyone in the metro.",
+        a: "Most clients are within Beltway 8, but we serve all of Greater Houston and ship for owners across Texas. We are based in Houston, which means on-site discovery for anyone in the metro.",
       },
       {
         q: "How fast can you start a project in Houston?",
@@ -93,7 +93,7 @@ export const cities: CityData[] = [
       },
       {
         q: "Can you meet at our office downtown?",
-        a: "Yes. We do on-site workshops across the Inner Loop and Med Center every week, and we host clients at the EaDo studio for kickoff and design reviews.",
+        a: "Yes. We do on-site workshops across the Inner Loop and Med Center every week, and we host clients in Houston for kickoff and design reviews.",
       },
     ],
   },
@@ -104,7 +104,7 @@ export const cities: CityData[] = [
     region: "Fort Bend County · Southwest Houston",
     population: "118,000 residents · 800,000 in Fort Bend",
     zipPrefix: "774xx",
-    drive: "22 minutes from EaDo via US-59 / I-69.",
+    drive: "22 minutes from Houston via US-59 / I-69.",
     geo: { lat: 29.6196, lng: -95.6349 },
     intro:
       "Sugar Land is one of the fastest-growing affluent submarkets in Texas. We build for the construction firms developing shopping centers across Sugar Land and Riverstone, the MRI clinics and physician groups along US-59, and the professional services firms anchoring Fort Bend's expansion.",
@@ -148,7 +148,7 @@ export const cities: CityData[] = [
     region: "Montgomery County · North Houston",
     population: "120,000 residents",
     zipPrefix: "773xx · 77380–77389",
-    drive: "35 minutes from EaDo via I-45 North.",
+    drive: "35 minutes from Houston via I-45 North.",
     geo: { lat: 30.1658, lng: -95.4613 },
     intro:
       "The Woodlands is a corporate-headquartered submarket with luxury-market design expectations. We build for the energy HQs, boutique law and wealth firms, and concept restaurants that hold the standard up here.",
@@ -192,7 +192,7 @@ export const cities: CityData[] = [
     region: "Fort Bend / Harris / Waller · West Houston",
     population: "23,000 city · 350,000+ in Katy ISD area",
     zipPrefix: "774xx · 77449, 77450, 77493, 77494",
-    drive: "30 minutes from EaDo via I-10 West.",
+    drive: "30 minutes from Houston via I-10 West.",
     geo: { lat: 29.7858, lng: -95.8244 },
     intro:
       "Katy is the fastest-growing master-planned market west of Houston. We build for the home-services operators running fifty-truck fleets out here, the retail concepts opening along LaCenterra, and the medical groups serving Cinco Ranch families.",
@@ -236,7 +236,7 @@ export const cities: CityData[] = [
     region: "Brazoria / Harris · South Houston",
     population: "126,000 residents",
     zipPrefix: "775xx · 77581, 77584, 77588",
-    drive: "25 minutes from EaDo via SH-288.",
+    drive: "25 minutes from Houston via SH-288.",
     geo: { lat: 29.5636, lng: -95.2861 },
     intro:
       "Pearland has become a multi-billion-dollar suburban economy of its own. We build for the MRI clinics, dental groups, and physician practices anchored to Memorial Hermann Pearland, plus the property managers and consumer brands scaling along SH-288.",
@@ -280,7 +280,7 @@ export const cities: CityData[] = [
     region: "Harris / Montgomery · North Houston",
     population: "62,000 residents · 250,000+ in 77373/77379/77386/77389",
     zipPrefix: "773xx",
-    drive: "30 minutes from EaDo via I-45 / Hardy Toll.",
+    drive: "30 minutes from Houston via I-45 / Hardy Toll.",
     geo: { lat: 30.0799, lng: -95.4172 },
     intro:
       "Spring is where North Houston scales. We build for the apparel and clothing retailers opening flagship locations up here, the home-services and light-industrial operators running the northern arc, and the multi-site clinics serving Klein and Champions.",
@@ -324,7 +324,7 @@ export const cities: CityData[] = [
     region: "Harris · Northwest Houston",
     population: "200,000+ in 77429 / 77433",
     zipPrefix: "77429 · 77433",
-    drive: "35 minutes from EaDo via US-290.",
+    drive: "35 minutes from Houston via US-290.",
     geo: { lat: 29.9691, lng: -95.6972 },
     intro:
       "Cypress is the explosive Northwest Houston growth corridor — Bridgeland, Towne Lake, and a wave of new healthcare, retail, and restaurant development. We build for the operators and developers planting flags before the corridor fills out.",
@@ -368,7 +368,7 @@ export const cities: CityData[] = [
     region: "Fort Bend · Southwest Houston",
     population: "75,000 residents",
     zipPrefix: "77459 · 77489",
-    drive: "30 minutes from EaDo via Beltway 8 / SH-6.",
+    drive: "30 minutes from Houston via Beltway 8 / SH-6.",
     geo: { lat: 29.6186, lng: -95.5377 },
     intro:
       "Missouri City sits at the heart of one of the most diverse and economically active stretches of Fort Bend. We build for the construction firms developing along Riverstone, the medical and MRI clinics serving Sienna, and the professional brands operating Southwest Houston.",
