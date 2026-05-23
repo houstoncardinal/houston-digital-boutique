@@ -146,6 +146,8 @@ function Index() {
 
       <ServiceAreaMap />
 
+      <ProcessQuest />
+
       <AtlasStoryScroll />
 
       <MiniGolf />
