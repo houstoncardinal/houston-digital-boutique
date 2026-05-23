@@ -169,7 +169,7 @@ export function CinematicReel() {
             offset={scrollY * -120}
             mouseX={mouse.x * -14}
             mouseY={mouse.y * -8}
-            className="col-span-12 sm:col-span-7 aspect-[16/10] sm:translate-y-12"
+            className="col-span-12 sm:col-span-6 lg:col-span-7 aspect-[16/10] sm:translate-y-12"
             tag="02 / Material"
             title="Architecture-first interfaces"
           />
