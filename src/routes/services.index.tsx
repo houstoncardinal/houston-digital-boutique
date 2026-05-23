@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   component: ServicesHub,
   head: () => ({
     meta: [
