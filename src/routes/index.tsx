@@ -142,6 +142,8 @@ function Index() {
 
       <ServiceBanners />
 
+      <ServiceAreaMap />
+
       <AtlasStoryScroll />
     </SiteLayout>
   );
