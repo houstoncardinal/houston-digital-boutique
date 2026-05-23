@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { VerticalNav } from "@/components/site/VerticalNav";
 import { CapabilitySlider, type SlideItem } from "@/components/site/CapabilitySlider";
+import { Reveal } from "@/components/site/Reveal";
 import heroTexture from "@/assets/hero-texture.jpg";
 import workBayou from "@/assets/work-bayou.jpg";
 import workSummit from "@/assets/work-summit.jpg";
