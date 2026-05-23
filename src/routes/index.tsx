@@ -285,26 +285,37 @@ function Index() {
         id="capabilities"
         className="grid md:grid-cols-4 border-b border-border scroll-mt-24"
       >
-        {capabilityHeadlines.map((c) => (
+        {capabilityHeadlines.map((c, i) => (
           <a
             key={c.id}
             href={`#${["apps", "websites", "branding", "cloud"][Number(c.id) - 1]}`}
-            className="p-8 md:p-10 border-b md:border-b-0 md:border-r last:border-r-0 border-border flex flex-col justify-between min-h-72 md:h-96 group hover:bg-card transition-colors"
+            className="relative p-8 md:p-10 border-b md:border-b-0 md:border-r last:border-r-0 border-border flex flex-col justify-between min-h-72 md:h-[28rem] group overflow-hidden"
           >
-            <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest group-hover:text-primary transition-colors">
-              {c.id} // Discipline
-            </div>
-            <div>
-              <h3 className="text-3xl md:text-4xl font-extrabold tracking-tighter leading-[0.95] mb-3">
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:to-transparent transition-all duration-1000"
+            />
+            <div
+              aria-hidden
+              className="absolute left-0 right-0 bottom-0 h-px bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+            />
+            <Reveal delay={i * 80}>
+              <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-[0.25em] group-hover:text-primary transition-colors duration-700">
+                {c.id} — Discipline
+              </div>
+            </Reveal>
+            <Reveal delay={i * 80 + 120} className="relative">
+              <h3 className="text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.92] mb-4 transition-transform duration-700 group-hover:-translate-y-1">
                 {c.label}
               </h3>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
                 {c.note}
               </p>
-              <div className="mt-6 font-mono text-[10px] uppercase tracking-widest text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                See the slider ↓
+              <div className="mt-8 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700">
+                <span>See slider</span>
+                <span className="block h-px w-8 bg-primary" />
               </div>
-            </div>
+            </Reveal>
           </a>
         ))}
       </section>
