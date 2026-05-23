@@ -10,22 +10,66 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Atlas Houston — Web Design, App Development, Branding & SEO" },
+      {
+        title:
+          "Houston Web Design, App Development, Social Media & Video Production | Atlas Houston",
+      },
       {
         name: "description",
         content:
-          "Atlas Houston designs, builds, hosts, and supports websites and mobile apps for business owners across Greater Houston. Senior team. Local studio. Real accountability.",
+          "Atlas Houston is a Houston, TX web design and app development agency. Custom websites, iOS & Android apps, social media management, and video production for businesses across Houston, Sugar Land, The Woodlands, Katy, Pearland, Spring, Cypress, and Missouri City.",
       },
-      { property: "og:title", content: "Atlas Houston — Digital products for Texas business" },
+      {
+        name: "keywords",
+        content:
+          "Houston web design, Houston web developer, Houston website design company, Houston app development, mobile app developer Houston, Houston social media management, Houston video production, Houston digital marketing agency, Sugar Land web design, The Woodlands web design, Katy web design, Pearland web design",
+      },
+      {
+        property: "og:title",
+        content: "Houston Web Design, App Development, Social & Video — Atlas Houston",
+      },
       {
         property: "og:description",
         content:
-          "A Houston design and engineering studio. Apps, websites, branding, cloud and SEO for owners across Greater Houston.",
+          "Houston-based studio building websites, mobile apps, social media, and video for businesses across Greater Houston.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Atlas Houston",
+          "@id": "https://atlashouston.com",
+          url: "https://atlashouston.com",
+          telephone: "+1-713-555-0188",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Houston",
+            addressRegion: "TX",
+            postalCode: "77002",
+            addressCountry: "US",
+          },
+          geo: { "@type": "GeoCoordinates", latitude: 29.7604, longitude: -95.3698 },
+          areaServed: [
+            "Houston, TX",
+            "Sugar Land, TX",
+            "The Woodlands, TX",
+            "Katy, TX",
+            "Pearland, TX",
+            "Spring, TX",
+            "Cypress, TX",
+            "Missouri City, TX",
+          ],
+          sameAs: ["https://www.visitcardinal.com"],
+          priceRange: "$$$",
+        }),
+      },
+    ],
   }),
 });
 
