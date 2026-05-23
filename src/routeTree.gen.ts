@@ -14,6 +14,11 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesWebsitesRouteImport } from './routes/services.websites'
+import { Route as ServicesSeoRouteImport } from './routes/services.seo'
+import { Route as ServicesMobileAppsRouteImport } from './routes/services.mobile-apps'
+import { Route as ServicesCloudHostingRouteImport } from './routes/services.cloud-hosting'
+import { Route as ServicesBrandingRouteImport } from './routes/services.branding'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -40,41 +45,112 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesWebsitesRoute = ServicesWebsitesRouteImport.update({
+  id: '/websites',
+  path: '/websites',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSeoRoute = ServicesSeoRouteImport.update({
+  id: '/seo',
+  path: '/seo',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesMobileAppsRoute = ServicesMobileAppsRouteImport.update({
+  id: '/mobile-apps',
+  path: '/mobile-apps',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesCloudHostingRoute = ServicesCloudHostingRouteImport.update({
+  id: '/cloud-hosting',
+  path: '/cloud-hosting',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesBrandingRoute = ServicesBrandingRouteImport.update({
+  id: '/branding',
+  path: '/branding',
+  getParentRoute: () => ServicesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/services/branding': typeof ServicesBrandingRoute
+  '/services/cloud-hosting': typeof ServicesCloudHostingRoute
+  '/services/mobile-apps': typeof ServicesMobileAppsRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/websites': typeof ServicesWebsitesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/services/branding': typeof ServicesBrandingRoute
+  '/services/cloud-hosting': typeof ServicesCloudHostingRoute
+  '/services/mobile-apps': typeof ServicesMobileAppsRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/websites': typeof ServicesWebsitesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/services/branding': typeof ServicesBrandingRoute
+  '/services/cloud-hosting': typeof ServicesCloudHostingRoute
+  '/services/mobile-apps': typeof ServicesMobileAppsRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/websites': typeof ServicesWebsitesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/services' | '/sitemap.xml' | '/work'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/services'
+    | '/sitemap.xml'
+    | '/work'
+    | '/services/branding'
+    | '/services/cloud-hosting'
+    | '/services/mobile-apps'
+    | '/services/seo'
+    | '/services/websites'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/services' | '/sitemap.xml' | '/work'
-  id: '__root__' | '/' | '/contact' | '/services' | '/sitemap.xml' | '/work'
+  to:
+    | '/'
+    | '/contact'
+    | '/services'
+    | '/sitemap.xml'
+    | '/work'
+    | '/services/branding'
+    | '/services/cloud-hosting'
+    | '/services/mobile-apps'
+    | '/services/seo'
+    | '/services/websites'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/services'
+    | '/sitemap.xml'
+    | '/work'
+    | '/services/branding'
+    | '/services/cloud-hosting'
+    | '/services/mobile-apps'
+    | '/services/seo'
+    | '/services/websites'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  ServicesRoute: typeof ServicesRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WorkRoute: typeof WorkRoute
 }
@@ -116,13 +192,68 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/websites': {
+      id: '/services/websites'
+      path: '/websites'
+      fullPath: '/services/websites'
+      preLoaderRoute: typeof ServicesWebsitesRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/seo': {
+      id: '/services/seo'
+      path: '/seo'
+      fullPath: '/services/seo'
+      preLoaderRoute: typeof ServicesSeoRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/mobile-apps': {
+      id: '/services/mobile-apps'
+      path: '/mobile-apps'
+      fullPath: '/services/mobile-apps'
+      preLoaderRoute: typeof ServicesMobileAppsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/cloud-hosting': {
+      id: '/services/cloud-hosting'
+      path: '/cloud-hosting'
+      fullPath: '/services/cloud-hosting'
+      preLoaderRoute: typeof ServicesCloudHostingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/branding': {
+      id: '/services/branding'
+      path: '/branding'
+      fullPath: '/services/branding'
+      preLoaderRoute: typeof ServicesBrandingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
+
+interface ServicesRouteChildren {
+  ServicesBrandingRoute: typeof ServicesBrandingRoute
+  ServicesCloudHostingRoute: typeof ServicesCloudHostingRoute
+  ServicesMobileAppsRoute: typeof ServicesMobileAppsRoute
+  ServicesSeoRoute: typeof ServicesSeoRoute
+  ServicesWebsitesRoute: typeof ServicesWebsitesRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesBrandingRoute: ServicesBrandingRoute,
+  ServicesCloudHostingRoute: ServicesCloudHostingRoute,
+  ServicesMobileAppsRoute: ServicesMobileAppsRoute,
+  ServicesSeoRoute: ServicesSeoRoute,
+  ServicesWebsitesRoute: ServicesWebsitesRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  ServicesRoute: ServicesRoute,
+  ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WorkRoute: WorkRoute,
 }
