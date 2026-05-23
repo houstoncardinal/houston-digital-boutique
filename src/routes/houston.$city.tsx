@@ -120,7 +120,7 @@ export const Route = createFileRoute("/houston/$city")({
 });
 
 function CityPage() {
-  const { city } = Route.useLoaderData();
+  const { city } = Route.useLoaderData() as { city: NonNullable<ReturnType<typeof getCity>> };
 
   return (
     <SiteLayout>
