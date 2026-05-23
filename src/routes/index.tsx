@@ -146,6 +146,8 @@ function Index() {
       <ServiceAreaMap />
 
       <AtlasStoryScroll />
+
+      <MiniGolf />
     </SiteLayout>
   );
 }
