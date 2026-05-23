@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "Is SEO worth it for a small Houston business?",
-    a: "Almost always yes — and almost always more than paid search. A roofer in Spring, a dental practice in the Heights, a freight broker in EaDo: ranking #1–3 in your immediate service-area on the queries customers actually type captures intent that never has to be re-bought. We've seen single local pages return 12-month organic value of $40k–$200k for service businesses, against a one-time build of a fraction of that.",
+    a: "Almost always yes — and almost always more than paid search. A roofer in Spring, a dental practice in the Heights, a freight broker in Houston: ranking #1–3 in your immediate service-area on the queries customers actually type captures intent that never has to be re-bought. We've seen single local pages return 12-month organic value of $40k–$200k for service businesses, against a one-time build of a fraction of that.",
   },
   {
     q: "What about AI search — ChatGPT, Perplexity, Gemini, Google AI Overviews?",
