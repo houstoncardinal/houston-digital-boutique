@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 import heroTexture from "@/assets/hero-texture.jpg";
 import { AtlasStoryScroll } from "@/components/site/AtlasStoryScroll";
+import { ServiceBanners } from "@/components/site/ServiceBanners";
 
 
 export const Route = createFileRoute("/")({
