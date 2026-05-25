@@ -50,7 +50,7 @@ export const Route = createFileRoute("/")({
           name: "Atlas Houston",
           "@id": "https://atlashouston.com",
           url: "https://atlashouston.com",
-          telephone: "+1-713-555-0188",
+          telephone: "+1-281-901-7016",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Houston",
@@ -69,6 +69,13 @@ export const Route = createFileRoute("/")({
             "Cypress, TX",
             "Missouri City, TX",
           ],
+          founder: {
+            "@type": "Person",
+            name: "Hunain Qureshi",
+            jobTitle: "Founder & CEO",
+            description:
+              "Tech CEO specializing in app development, web development, and SEO. Based in Houston, working with founders across Silicon Valley and the United States.",
+          },
           sameAs: ["https://www.visitcardinal.com"],
           priceRange: "$$$",
         }),
@@ -152,6 +159,65 @@ function Index() {
       <ProcessQuest />
 
       <AtlasStoryScroll />
+
+      {/* FOUNDER */}
+      <section className="px-5 sm:px-8 md:px-12 lg:px-16 py-20 md:py-28 border-t border-border">
+        <div className="mx-auto max-w-6xl grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+          <div className="md:col-span-4">
+            <div className="font-mono text-primary text-[10px] tracking-[0.35em] uppercase mb-5">
+              // Founder
+            </div>
+            <div className="aspect-[4/5] w-full border border-border bg-gradient-to-br from-primary/10 via-background to-background flex items-end p-6">
+              <div>
+                <div className="font-serif text-3xl md:text-4xl tracking-tight leading-tight">
+                  Hunain<br />Qureshi
+                </div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mt-3">
+                  Founder & CEO
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="md:col-span-8">
+            <h2 className="font-serif text-3xl md:text-5xl tracking-tight leading-[1.05] mb-6">
+              A tech CEO who actually <span className="italic text-primary">writes the code</span>.
+            </h2>
+            <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              <p>
+                Atlas Houston is led by <strong className="text-foreground">Hunain Qureshi</strong>,
+                a Houston-based tech CEO specializing in app development, web development, and SEO.
+                He works directly with every client — no account managers, no offshore handoffs.
+              </p>
+              <p>
+                Based in the Houston area with active projects across Silicon Valley and clients
+                from coast to coast, Hunain has shipped mobile apps, headless e-commerce sites, and
+                AI-powered platforms for founders who care about speed, search, and the actual
+                outcome.
+              </p>
+              <p>
+                Reach him directly:{" "}
+                <a href="tel:+12819017016" className="text-primary underline underline-offset-4 hover:text-foreground">
+                  (281) 901-7016
+                </a>.
+              </p>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                to="/contact"
+                className="cta-lux px-6 py-4 bg-primary text-primary-foreground font-mono text-[11px] font-semibold uppercase tracking-[0.25em] hover:bg-foreground hover:text-background transition-colors"
+              >
+                Book the call →
+              </Link>
+              <a
+                href="tel:+12819017016"
+                className="px-6 py-4 border border-border font-mono text-[11px] font-semibold uppercase tracking-[0.25em] hover:border-primary hover:text-primary transition-colors"
+              >
+                ☎ (281) 901-7016
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <MiniGolf />
     </SiteLayout>

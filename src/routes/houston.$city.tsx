@@ -48,7 +48,7 @@ export const Route = createFileRoute("/houston/$city")({
       name: `Atlas Houston — ${city.name}`,
       description,
       url,
-      telephone: "+1-713-555-0188",
+      telephone: "+1-281-901-7016",
       priceRange: "$$$",
       address: {
         "@type": "PostalAddress",

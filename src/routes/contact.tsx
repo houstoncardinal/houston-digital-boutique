@@ -44,7 +44,7 @@ function ContactPage() {
           {[
             { k: "Studio", v: "Houston, TX" },
             { k: "Email", v: "hello@atlashouston.com" },
-            { k: "Phone", v: "(713) 555-0188" },
+            { k: "Phone", v: "(281) 901-7016" },
             { k: "Response", v: "Within 1 business day" },
           ].map((b) => (
             <div key={b.k} className="border-t border-border pt-4">
