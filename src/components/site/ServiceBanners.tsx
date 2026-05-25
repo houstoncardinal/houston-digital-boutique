@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { Code2, Smartphone, Megaphone, Film } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import hitechlogicShot from "@/assets/hitechlogic-website.png";
+import { WebsiteMockAnimation } from "@/components/site/WebsiteMockAnimation";
 
 interface Banner {
   num: string;
@@ -14,7 +14,7 @@ interface Banner {
   href: string;
   cta: string;
   Icon: LucideIcon;
-  image?: string;
+  animation?: "website";
 }
 
 const banners: Banner[] = [
@@ -29,7 +29,7 @@ const banners: Banner[] = [
     href: "/services/websites",
     cta: "See Web Work",
     Icon: Code2,
-    image: hitechlogicShot,
+    animation: "website",
   },
   {
     num: "02",
