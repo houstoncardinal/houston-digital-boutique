@@ -39,7 +39,7 @@ function ProjectsPage() {
   const [milestones, setMilestones] = useState<Milestone[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [editing, setEditing] = useState<Partial<Project> & { id: string | null } | null>(null);
+  const [editing, setEditing] = useState<Omit<Partial<Project>, "id"> & { id: string | null } | null>(null);
   const [newMs, setNewMs] = useState("");
 
   const reload = async () => {
