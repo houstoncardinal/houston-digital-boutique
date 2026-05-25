@@ -20,14 +20,14 @@ export const Route = createFileRoute("/admin")({
 
 const PIN_KEY = "atlas_admin_pin";
 
-const NAV = [
+const NAV: { to: string; label: string; icon: typeof LayoutDashboard; exact?: boolean }[] = [
   { to: "/admin", label: "Overview", icon: LayoutDashboard, exact: true },
   { to: "/admin/leads", label: "Leads", icon: Inbox },
   { to: "/admin/clients", label: "Clients", icon: Users },
   { to: "/admin/projects", label: "Projects", icon: Briefcase },
   { to: "/admin/payments", label: "Payments", icon: CreditCard },
   { to: "/admin/support", label: "Support", icon: LifeBuoy },
-] as const;
+];
 
 function AdminLayout() {
   const verifyPin = useServerFn(adminVerifyPin);

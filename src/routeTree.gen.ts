@@ -18,6 +18,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as ServicesWebsitesRouteImport } from './routes/services.websites'
 import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesMobileAppsRouteImport } from './routes/services.mobile-apps'
@@ -70,6 +71,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ServicesRoute,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
 const ServicesWebsitesRoute = ServicesWebsitesRouteImport.update({
   id: '/websites',
   path: '/websites',
@@ -103,7 +109,7 @@ const HoustonCityRoute = HoustonCityRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
@@ -116,11 +122,11 @@ export interface FileRoutesByFullPath {
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
+  '/admin/': typeof AdminIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
@@ -132,12 +138,13 @@ export interface FileRoutesByTo {
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
+  '/admin': typeof AdminIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
@@ -150,6 +157,7 @@ export interface FileRoutesById {
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
+  '/admin/': typeof AdminIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -169,11 +177,11 @@ export interface FileRouteTypes {
     | '/services/mobile-apps'
     | '/services/seo'
     | '/services/websites'
+    | '/admin/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/admin'
     | '/auth'
     | '/contact'
     | '/houston'
@@ -185,6 +193,7 @@ export interface FileRouteTypes {
     | '/services/mobile-apps'
     | '/services/seo'
     | '/services/websites'
+    | '/admin'
     | '/services'
   id:
     | '__root__'
@@ -202,12 +211,13 @@ export interface FileRouteTypes {
     | '/services/mobile-apps'
     | '/services/seo'
     | '/services/websites'
+    | '/admin/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AdminRoute: typeof AdminRoute
+  AdminRoute: typeof AdminRouteWithChildren
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
   HoustonRoute: typeof HoustonRouteWithChildren
@@ -281,6 +291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/services/websites': {
       id: '/services/websites'
       path: '/websites'
@@ -326,6 +343,16 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AdminRouteChildren {
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 interface HoustonRouteChildren {
   HoustonCityRoute: typeof HoustonCityRoute
 }
@@ -361,7 +388,7 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AdminRoute: AdminRoute,
+  AdminRoute: AdminRouteWithChildren,
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
   HoustonRoute: HoustonRouteWithChildren,
