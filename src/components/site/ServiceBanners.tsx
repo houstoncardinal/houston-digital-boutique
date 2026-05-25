@@ -150,13 +150,8 @@ export function ServiceBanners() {
                       aria-hidden
                       className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"
                     />
-                    {b.image ? (
-                      <img
-                        src={b.image}
-                        alt={`${b.eyebrow} — example website built by Atlas`}
-                        loading="lazy"
-                        className="relative w-full h-auto object-contain"
-                      />
+                    {b.animation === "website" ? (
+                      <WebsiteMockAnimation />
                     ) : (
                       <div className="aspect-square w-full flex items-center justify-center">
                         <b.Icon
