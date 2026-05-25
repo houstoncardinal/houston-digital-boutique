@@ -18,12 +18,18 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as ServicesWebsitesRouteImport } from './routes/services.websites'
 import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesMobileAppsRouteImport } from './routes/services.mobile-apps'
 import { Route as ServicesCloudHostingRouteImport } from './routes/services.cloud-hosting'
 import { Route as ServicesBrandingRouteImport } from './routes/services.branding'
 import { Route as HoustonCityRouteImport } from './routes/houston.$city'
+import { Route as AdminSupportRouteImport } from './routes/admin.support'
+import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
+import { Route as AdminPaymentsRouteImport } from './routes/admin.payments'
+import { Route as AdminLeadsRouteImport } from './routes/admin.leads'
+import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -70,6 +76,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ServicesRoute,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
 const ServicesWebsitesRoute = ServicesWebsitesRouteImport.update({
   id: '/websites',
   path: '/websites',
@@ -100,56 +111,98 @@ const HoustonCityRoute = HoustonCityRouteImport.update({
   path: '/$city',
   getParentRoute: () => HoustonRoute,
 } as any)
+const AdminSupportRoute = AdminSupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminProjectsRoute = AdminProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminPaymentsRoute = AdminPaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminLeadsRoute = AdminLeadsRouteImport.update({
+  id: '/leads',
+  path: '/leads',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminClientsRoute = AdminClientsRouteImport.update({
+  id: '/clients',
+  path: '/clients',
+  getParentRoute: () => AdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/admin/clients': typeof AdminClientsRoute
+  '/admin/leads': typeof AdminLeadsRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/support': typeof AdminSupportRoute
   '/houston/$city': typeof HoustonCityRoute
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
+  '/admin/': typeof AdminIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/admin/clients': typeof AdminClientsRoute
+  '/admin/leads': typeof AdminLeadsRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/support': typeof AdminSupportRoute
   '/houston/$city': typeof HoustonCityRoute
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
+  '/admin': typeof AdminIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/admin/clients': typeof AdminClientsRoute
+  '/admin/leads': typeof AdminLeadsRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/support': typeof AdminSupportRoute
   '/houston/$city': typeof HoustonCityRoute
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/websites': typeof ServicesWebsitesRoute
+  '/admin/': typeof AdminIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -163,28 +216,39 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/work'
+    | '/admin/clients'
+    | '/admin/leads'
+    | '/admin/payments'
+    | '/admin/projects'
+    | '/admin/support'
     | '/houston/$city'
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
     | '/services/seo'
     | '/services/websites'
+    | '/admin/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/admin'
     | '/auth'
     | '/contact'
     | '/houston'
     | '/sitemap.xml'
     | '/work'
+    | '/admin/clients'
+    | '/admin/leads'
+    | '/admin/payments'
+    | '/admin/projects'
+    | '/admin/support'
     | '/houston/$city'
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
     | '/services/seo'
     | '/services/websites'
+    | '/admin'
     | '/services'
   id:
     | '__root__'
@@ -196,18 +260,24 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/work'
+    | '/admin/clients'
+    | '/admin/leads'
+    | '/admin/payments'
+    | '/admin/projects'
+    | '/admin/support'
     | '/houston/$city'
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
     | '/services/seo'
     | '/services/websites'
+    | '/admin/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AdminRoute: typeof AdminRoute
+  AdminRoute: typeof AdminRouteWithChildren
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
   HoustonRoute: typeof HoustonRouteWithChildren
@@ -281,6 +351,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/services/websites': {
       id: '/services/websites'
       path: '/websites'
@@ -323,8 +400,63 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HoustonCityRouteImport
       parentRoute: typeof HoustonRoute
     }
+    '/admin/support': {
+      id: '/admin/support'
+      path: '/support'
+      fullPath: '/admin/support'
+      preLoaderRoute: typeof AdminSupportRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/projects': {
+      id: '/admin/projects'
+      path: '/projects'
+      fullPath: '/admin/projects'
+      preLoaderRoute: typeof AdminProjectsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/payments': {
+      id: '/admin/payments'
+      path: '/payments'
+      fullPath: '/admin/payments'
+      preLoaderRoute: typeof AdminPaymentsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/leads': {
+      id: '/admin/leads'
+      path: '/leads'
+      fullPath: '/admin/leads'
+      preLoaderRoute: typeof AdminLeadsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/clients': {
+      id: '/admin/clients'
+      path: '/clients'
+      fullPath: '/admin/clients'
+      preLoaderRoute: typeof AdminClientsRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
+
+interface AdminRouteChildren {
+  AdminClientsRoute: typeof AdminClientsRoute
+  AdminLeadsRoute: typeof AdminLeadsRoute
+  AdminPaymentsRoute: typeof AdminPaymentsRoute
+  AdminProjectsRoute: typeof AdminProjectsRoute
+  AdminSupportRoute: typeof AdminSupportRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminClientsRoute: AdminClientsRoute,
+  AdminLeadsRoute: AdminLeadsRoute,
+  AdminPaymentsRoute: AdminPaymentsRoute,
+  AdminProjectsRoute: AdminProjectsRoute,
+  AdminSupportRoute: AdminSupportRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface HoustonRouteChildren {
   HoustonCityRoute: typeof HoustonCityRoute
@@ -361,7 +493,7 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AdminRoute: AdminRoute,
+  AdminRoute: AdminRouteWithChildren,
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
   HoustonRoute: HoustonRouteWithChildren,
