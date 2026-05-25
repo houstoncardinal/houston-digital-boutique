@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { Code2, Smartphone, Megaphone, Film } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import hitechlogicShot from "@/assets/hitechlogic-website.png";
+import { WebsiteMockAnimation } from "@/components/site/WebsiteMockAnimation";
 
 interface Banner {
   num: string;
@@ -14,7 +14,7 @@ interface Banner {
   href: string;
   cta: string;
   Icon: LucideIcon;
-  image?: string;
+  animation?: "website";
 }
 
 const banners: Banner[] = [
@@ -29,7 +29,7 @@ const banners: Banner[] = [
     href: "/services/websites",
     cta: "See Web Work",
     Icon: Code2,
-    image: hitechlogicShot,
+    animation: "website",
   },
   {
     num: "02",
@@ -150,13 +150,8 @@ export function ServiceBanners() {
                       aria-hidden
                       className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"
                     />
-                    {b.image ? (
-                      <img
-                        src={b.image}
-                        alt={`${b.eyebrow} — example website built by Atlas`}
-                        loading="lazy"
-                        className="relative w-full h-auto object-contain"
-                      />
+                    {b.animation === "website" ? (
+                      <WebsiteMockAnimation />
                     ) : (
                       <div className="aspect-square w-full flex items-center justify-center">
                         <b.Icon
