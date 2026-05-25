@@ -177,9 +177,10 @@ export const adminToggleMilestone = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }) => {
     guard(data.pin);
-    const patch: Record<string, unknown> = { status: data.status };
-    if (data.status === "done") patch.completed_at = new Date().toISOString();
-    else patch.completed_at = null;
+    const patch = {
+      status: data.status,
+      completed_at: data.status === "done" ? new Date().toISOString() : null,
+    };
     const { error } = await supabaseAdmin.from("milestones").update(patch).eq("id", data.id);
     if (error) throw new Error(error.message);
     return { ok: true };
