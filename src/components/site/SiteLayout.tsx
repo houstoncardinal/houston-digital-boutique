@@ -69,7 +69,7 @@ export function SiteFooter() {
         <div className="md:col-span-3 font-mono text-[10px] text-muted-foreground space-y-3 uppercase tracking-[0.2em]">
           <p className="text-foreground">Studio</p>
           <p>Houston, TX</p>
-          <p>+1 (713) 555 — 0188</p>
+          <p>+1 (281) 901-7016</p>
         </div>
         <div className="md:col-span-3 font-mono text-[10px] text-muted-foreground space-y-3 uppercase tracking-[0.2em]">
           <p className="text-foreground">Channels</p>
