@@ -50,7 +50,7 @@ export const Route = createFileRoute("/")({
           name: "Atlas Houston",
           "@id": "https://atlashouston.com",
           url: "https://atlashouston.com",
-          telephone: "+1-713-555-0188",
+          telephone: "+1-281-901-7016",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Houston",
