@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { Code2, Smartphone, Megaphone, Film } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import hitechlogicShot from "@/assets/hitechlogic-website.png";
 
 interface Banner {
   num: string;
