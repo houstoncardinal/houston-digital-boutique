@@ -14,6 +14,7 @@ interface Banner {
   href: string;
   cta: string;
   Icon: LucideIcon;
+  image?: string;
 }
 
 const banners: Banner[] = [
@@ -28,6 +29,7 @@ const banners: Banner[] = [
     href: "/services/websites",
     cta: "See Web Work",
     Icon: Code2,
+    image: hitechlogicShot,
   },
   {
     num: "02",
@@ -148,11 +150,20 @@ export function ServiceBanners() {
                       aria-hidden
                       className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"
                     />
-                    <b.Icon
-                      className="relative w-32 h-32 sm:w-40 sm:h-40 text-primary"
-                      strokeWidth={1}
-                    />
-                    <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80">
+                    {b.image ? (
+                      <img
+                        src={b.image}
+                        alt={`${b.eyebrow} — example website built by Atlas`}
+                        loading="lazy"
+                        className="relative w-full h-full object-cover object-top"
+                      />
+                    ) : (
+                      <b.Icon
+                        className="relative w-32 h-32 sm:w-40 sm:h-40 text-primary"
+                        strokeWidth={1}
+                      />
+                    )}
+                    <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 mix-blend-difference">
                       Atlas / {b.eyebrow}
                     </div>
                     <div className="absolute bottom-4 right-4 font-serif text-6xl sm:text-7xl text-gold/30">
