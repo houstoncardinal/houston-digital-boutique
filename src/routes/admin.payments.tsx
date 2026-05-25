@@ -28,7 +28,7 @@ function PaymentsPage() {
   const [clients, setClients] = useState<Opt[]>([]);
   const [projects, setProjects] = useState<Opt[]>([]);
   const [loading, setLoading] = useState(true);
-  const [editing, setEditing] = useState<Partial<Payment> & { id: string | null } | null>(null);
+  const [editing, setEditing] = useState<Omit<Partial<Payment>, "id"> & { id: string | null } | null>(null);
 
   const reload = async () => {
     const r = await list({ data: { pin } });
