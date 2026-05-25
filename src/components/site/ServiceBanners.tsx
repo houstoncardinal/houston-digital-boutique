@@ -145,7 +145,7 @@ export function ServiceBanners() {
                 </div>
 
                 <div className="lg:col-span-5">
-                  <div className="aspect-square relative border border-border bg-card/40 flex items-center justify-center overflow-hidden">
+                  <div className="relative border border-border bg-card/40 flex items-center justify-center overflow-hidden rounded-sm">
                     <div
                       aria-hidden
                       className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"
@@ -155,13 +155,15 @@ export function ServiceBanners() {
                         src={b.image}
                         alt={`${b.eyebrow} — example website built by Atlas`}
                         loading="lazy"
-                        className="relative w-full h-full object-cover object-top"
+                        className="relative w-full h-auto object-contain"
                       />
                     ) : (
-                      <b.Icon
-                        className="relative w-32 h-32 sm:w-40 sm:h-40 text-primary"
-                        strokeWidth={1}
-                      />
+                      <div className="aspect-square w-full flex items-center justify-center">
+                        <b.Icon
+                          className="relative w-32 h-32 sm:w-40 sm:h-40 text-primary"
+                          strokeWidth={1}
+                        />
+                      </div>
                     )}
                     <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 mix-blend-difference">
                       Atlas / {b.eyebrow}
