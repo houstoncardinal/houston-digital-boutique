@@ -8,6 +8,9 @@ import { ServiceAreaMap } from "@/components/site/ServiceAreaMap";
 import { ProcessQuest } from "@/components/site/ProcessQuest";
 import { MiniGolf } from "@/components/site/MiniGolf";
 import { CinematicReel } from "@/components/site/CinematicReel";
+import { TrustStrip } from "@/components/site/TrustStrip";
+import { SectionGuide } from "@/components/site/SectionGuide";
+import { EnterpriseFAQ } from "@/components/site/EnterpriseFAQ";
 
 
 export const Route = createFileRoute("/")({
