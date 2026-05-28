@@ -83,6 +83,47 @@ export const Route = createFileRoute("/")({
           priceRange: "$$$",
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Who actually does the work at Atlas Houston?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Hunain Qureshi (founder & CEO) and a 13-person senior team of engineers, designers, and producers — all based in Houston. The partner who pitches the work also ships it.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How fast can a project ship?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Marketing sites in 3–5 weeks, e-commerce and portals in 6–10 weeks, native mobile apps in 10–16 weeks to App Store. Social and video engagements start within 7 days.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Do you work outside of Houston, TX?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Atlas is Houston-based but works with founders across Silicon Valley, Austin, Dallas, NYC, and remote clients nationwide.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What does Atlas Houston pricing look like?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Project minimums start around $8K for a focused marketing site and scale into six figures for platform builds. Every proposal includes a fixed price band and published timeline.",
+              },
+            },
+          ],
+        }),
+      },
     ],
   }),
 });
