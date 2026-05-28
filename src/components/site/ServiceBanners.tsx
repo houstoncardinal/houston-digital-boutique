@@ -166,7 +166,7 @@ export function ServiceBanners() {
                   <p className="font-display text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mb-8">
                     {b.blurb}
                   </p>
-                  <ul className="grid sm:grid-cols-3 gap-3 sm:gap-4 mb-10">
+                  <ul className="grid sm:grid-cols-3 gap-3 sm:gap-4 mb-8">
                     {b.bullets.map((bl) => (
                       <li
                         key={bl}
@@ -176,6 +176,47 @@ export function ServiceBanners() {
                       </li>
                     ))}
                   </ul>
+
+                  {/* Enterprise meta strip — deliverables, timeline, KPI */}
+                  <div className="grid sm:grid-cols-3 gap-px bg-border border border-border mb-8 max-w-3xl">
+                    <div className="bg-background p-4">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.28em] text-primary mb-2">
+                        Timeline
+                      </div>
+                      <div className="font-serif text-lg leading-tight">{b.timeline}</div>
+                    </div>
+                    <div className="bg-background p-4 sm:col-span-2">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.28em] text-primary mb-2">
+                        Outcome
+                      </div>
+                      <div className="font-serif text-lg leading-tight">{b.kpi}</div>
+                    </div>
+                  </div>
+
+                  <div className="mb-8 max-w-2xl">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-primary mb-3">
+                      What's delivered
+                    </div>
+                    <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                      {b.deliverables.map((d) => (
+                        <li
+                          key={d}
+                          className="flex items-start gap-3 font-display text-sm text-foreground/90"
+                        >
+                          <span className="text-primary mt-1.5">✦</span>
+                          <span>{d}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <p className="font-display text-sm text-muted-foreground italic max-w-2xl mb-8">
+                    <span className="not-italic font-mono text-[10px] uppercase tracking-[0.28em] text-primary mr-2">
+                      Ideal for
+                    </span>
+                    {b.idealFor}
+                  </p>
+
                   <Link
                     to={b.href}
                     className="inline-block cta-lux px-8 py-5 bg-primary text-primary-foreground font-mono text-[11px] font-semibold uppercase tracking-[0.25em] hover:bg-foreground hover:text-background transition-colors"
