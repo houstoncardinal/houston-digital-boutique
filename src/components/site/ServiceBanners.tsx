@@ -11,6 +11,10 @@ interface Banner {
   italic: string;
   blurb: string;
   bullets: string[];
+  deliverables: string[];
+  idealFor: string;
+  timeline: string;
+  kpi: string;
   href: string;
   cta: string;
   Icon: LucideIcon;
@@ -24,8 +28,17 @@ const banners: Banner[] = [
     title: "Websites that",
     italic: "outwork your sales team.",
     blurb:
-      "Custom-engineered marketing sites, e-commerce, and customer portals — fast, secure, and built to convert Houston buyers from the first scroll.",
-    bullets: ["Sub-1.5s load times", "SEO-ready architecture", "Built to scale"],
+      "Custom-engineered marketing sites, e-commerce platforms, and customer portals — engineered for sub-second load times, ranked for Houston intent, and instrumented to convert from the first scroll. Every site ships with Core Web Vitals passing, structured data, and a CMS your team can actually use.",
+    bullets: ["Sub-1.5s LCP", "Headless & Jamstack", "Conversion-instrumented"],
+    deliverables: [
+      "Custom design system",
+      "Headless CMS (Sanity / Payload)",
+      "On-page & technical SEO",
+      "Analytics + CRO tracking",
+    ],
+    idealFor: "Service businesses, SaaS founders, and e-commerce brands scaling past spreadsheets.",
+    timeline: "3–8 weeks",
+    kpi: "Avg. 2.4× lift in qualified leads in 90 days",
     href: "/services/websites",
     cta: "See Web Work",
     Icon: Code2,
@@ -37,8 +50,17 @@ const banners: Banner[] = [
     title: "Mobile apps for",
     italic: "operations that run Houston.",
     blurb:
-      "Native iOS, Android, and React Native apps for field crews, customers, and back-office teams. Built by senior engineers who maintain what they ship.",
-    bullets: ["iOS · Android · React Native", "Offline-first", "App Store launch included"],
+      "Native iOS, Android, and React Native apps for field crews, customers, and back-office teams. Built by senior engineers, hardened with offline-first architecture, and shipped through the App Store and Play Store by the same people who wrote the code.",
+    bullets: ["iOS · Android · React Native", "Offline-first sync", "App Store launch included"],
+    deliverables: [
+      "Native or cross-platform build",
+      "Auth, push, payments, OTA",
+      "Admin dashboard + API",
+      "App Store & Play Store launch",
+    ],
+    idealFor: "Field-service ops, healthcare, marketplaces, and consumer products with retention loops.",
+    timeline: "10–16 weeks",
+    kpi: "App Store launch in <120 days, 99.9% crash-free",
     href: "/services/mobile-apps",
     cta: "See App Work",
     Icon: Smartphone,
@@ -49,8 +71,17 @@ const banners: Banner[] = [
     title: "Social that actually",
     italic: "moves the needle.",
     blurb:
-      "Strategy, content, posting, and growth — managed end-to-end by a Houston team that knows your market and creates content your customers stop scrolling for.",
-    bullets: ["Instagram · TikTok · LinkedIn", "Content calendars", "Monthly performance reports"],
+      "Strategy, content production, daily posting, community management, and paid amplification — owned end-to-end by a Houston team that lives in your market. Every channel ships with a content calendar, brand voice doc, and a monthly performance review your CFO can read.",
+    bullets: ["Instagram · TikTok · LinkedIn", "In-house content studio", "Monthly KPI reporting"],
+    deliverables: [
+      "Quarterly content strategy",
+      "20–30 posts/month per channel",
+      "Community management",
+      "Paid social (Meta + LinkedIn)",
+    ],
+    idealFor: "Local brands, restaurants, real-estate teams, and B2B founders building category authority.",
+    timeline: "Live in 7 days",
+    kpi: "Avg. 4.1× engagement lift in 90 days",
     href: "/contact",
     cta: "Get a Strategy",
     Icon: Megaphone,
@@ -61,8 +92,17 @@ const banners: Banner[] = [
     title: "Cinema-grade video,",
     italic: "shot in Houston.",
     blurb:
-      "Brand films, commercials, product videos, and short-form reels. Full crews, professional gear, and edit teams that turn raw footage into a story buyers feel.",
-    bullets: ["Brand films & ads", "Reels & shorts", "Full crew + edit suite"],
+      "Brand films, founder stories, commercials, product launches, and short-form reels — produced with full crews, cinema-grade gear, and an in-house edit suite. We translate strategy into footage buyers feel, then cut it for every channel you sell on.",
+    bullets: ["Brand films & ads", "Reels & shorts at scale", "Full crew + edit suite"],
+    deliverables: [
+      "Pre-production + storyboarding",
+      "Director, DP, sound, lighting",
+      "4K/6K cinema delivery",
+      "Multi-cut for web, social, OTT",
+    ],
+    idealFor: "Founders launching brands, products, or capital raises that demand a cinematic story.",
+    timeline: "2–6 weeks",
+    kpi: "Avg. 3.2× watch-through vs. stock content",
     href: "/contact",
     cta: "Book a Shoot",
     Icon: Film,
@@ -126,7 +166,7 @@ export function ServiceBanners() {
                   <p className="font-display text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mb-8">
                     {b.blurb}
                   </p>
-                  <ul className="grid sm:grid-cols-3 gap-3 sm:gap-4 mb-10">
+                  <ul className="grid sm:grid-cols-3 gap-3 sm:gap-4 mb-8">
                     {b.bullets.map((bl) => (
                       <li
                         key={bl}
@@ -136,6 +176,47 @@ export function ServiceBanners() {
                       </li>
                     ))}
                   </ul>
+
+                  {/* Enterprise meta strip — deliverables, timeline, KPI */}
+                  <div className="grid sm:grid-cols-3 gap-px bg-border border border-border mb-8 max-w-3xl">
+                    <div className="bg-background p-4">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.28em] text-primary mb-2">
+                        Timeline
+                      </div>
+                      <div className="font-serif text-lg leading-tight">{b.timeline}</div>
+                    </div>
+                    <div className="bg-background p-4 sm:col-span-2">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.28em] text-primary mb-2">
+                        Outcome
+                      </div>
+                      <div className="font-serif text-lg leading-tight">{b.kpi}</div>
+                    </div>
+                  </div>
+
+                  <div className="mb-8 max-w-2xl">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-primary mb-3">
+                      What's delivered
+                    </div>
+                    <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                      {b.deliverables.map((d) => (
+                        <li
+                          key={d}
+                          className="flex items-start gap-3 font-display text-sm text-foreground/90"
+                        >
+                          <span className="text-primary mt-1.5">✦</span>
+                          <span>{d}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <p className="font-display text-sm text-muted-foreground italic max-w-2xl mb-8">
+                    <span className="not-italic font-mono text-[10px] uppercase tracking-[0.28em] text-primary mr-2">
+                      Ideal for
+                    </span>
+                    {b.idealFor}
+                  </p>
+
                   <Link
                     to={b.href}
                     className="inline-block cta-lux px-8 py-5 bg-primary text-primary-foreground font-mono text-[11px] font-semibold uppercase tracking-[0.25em] hover:bg-foreground hover:text-background transition-colors"

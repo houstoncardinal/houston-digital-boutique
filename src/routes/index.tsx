@@ -8,6 +8,9 @@ import { ServiceAreaMap } from "@/components/site/ServiceAreaMap";
 import { ProcessQuest } from "@/components/site/ProcessQuest";
 import { MiniGolf } from "@/components/site/MiniGolf";
 import { CinematicReel } from "@/components/site/CinematicReel";
+import { TrustStrip } from "@/components/site/TrustStrip";
+import { SectionGuide } from "@/components/site/SectionGuide";
+import { EnterpriseFAQ } from "@/components/site/EnterpriseFAQ";
 
 
 export const Route = createFileRoute("/")({
@@ -80,6 +83,47 @@ export const Route = createFileRoute("/")({
           priceRange: "$$$",
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Who actually does the work at Atlas Houston?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Hunain Qureshi (founder & CEO) and a 13-person senior team of engineers, designers, and producers — all based in Houston. The partner who pitches the work also ships it.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How fast can a project ship?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Marketing sites in 3–5 weeks, e-commerce and portals in 6–10 weeks, native mobile apps in 10–16 weeks to App Store. Social and video engagements start within 7 days.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Do you work outside of Houston, TX?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Atlas is Houston-based but works with founders across Silicon Valley, Austin, Dallas, NYC, and remote clients nationwide.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What does Atlas Houston pricing look like?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Project minimums start around $8K for a focused marketing site and scale into six figures for platform builds. Every proposal includes a fixed price band and published timeline.",
+              },
+            },
+          ],
+        }),
+      },
     ],
   }),
 });
@@ -150,18 +194,89 @@ function Index() {
         </div>
       </section>
 
-      <ServiceBanners />
+      <TrustStrip />
+
+      <SectionGuide />
+
+      <div id="who" className="scroll-mt-24">
+        <AtlasStoryScroll />
+      </div>
+
+      <div id="services" className="scroll-mt-24">
+        <ServiceBanners />
+      </div>
 
       <CinematicReel />
 
-      <ServiceAreaMap />
+      <div id="where" className="scroll-mt-24">
+        <ServiceAreaMap />
+      </div>
 
-      <ProcessQuest />
+      <div id="process" className="scroll-mt-24">
+        <ProcessQuest />
+      </div>
 
-      <AtlasStoryScroll />
+      {/* PURPOSE — why this exists */}
+      <section
+        id="purpose"
+        aria-label="Why we built Atlas"
+        className="scroll-mt-24 relative border-t border-border emerald-wash"
+      >
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 md:px-12 lg:px-16 py-20 sm:py-28">
+          <Reveal>
+            <div className="flex items-center gap-4 mb-6">
+              <span className="block h-px w-12 bg-primary" />
+              <p className="font-mono text-[10px] sm:text-[11px] tracking-[0.35em] uppercase text-primary">
+                05 — Why it matters
+              </p>
+            </div>
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.98] tracking-[-0.02em] max-w-4xl mb-10">
+              We don't ship deliverables.
+              <span className="block italic text-gold">We ship outcomes.</span>
+            </h2>
+            <p className="font-display text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mb-12 dropcap">
+              Most agencies measure success in tasks completed, slides delivered, and invoices sent.
+              Atlas measures success in the only metric that pays the bills: did the business get bigger?
+              Every website, app, campaign, and film we ship is wired to a number — leads, installs,
+              revenue, watch-time, ranking — and reported back monthly so you always know what the
+              work is actually doing.
+            </p>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-3 gap-px bg-border border border-border">
+            {[
+              {
+                h: "One accountable team",
+                p: "The partner who scoped the work writes the contract, ships the code, and answers the phone at 2 a.m. No account managers, no offshore relay.",
+              },
+              {
+                h: "Craft, not templates",
+                p: "Every system is hand-built for the business it serves. No template farms, no white-labeled themes, no recycled brand kits.",
+              },
+              {
+                h: "Built to last",
+                p: "We maintain what we ship — for years, not sprints. Security patches, performance reviews, and SEO reporting bundled into care plans.",
+              },
+            ].map((c) => (
+              <div key={c.h} className="bg-background p-6 sm:p-8">
+                <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-4">
+                  Principle
+                </div>
+                <div className="font-serif text-2xl sm:text-3xl leading-tight mb-3">{c.h}</div>
+                <p className="font-display text-sm text-muted-foreground leading-relaxed">{c.p}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <EnterpriseFAQ />
 
       {/* FOUNDER */}
-      <section className="px-5 sm:px-8 md:px-12 lg:px-16 py-20 md:py-28 border-t border-border">
+      <section
+        id="begin"
+        className="scroll-mt-24 px-5 sm:px-8 md:px-12 lg:px-16 py-20 md:py-28 border-t border-border"
+      >
         <div className="mx-auto max-w-6xl grid md:grid-cols-12 gap-10 md:gap-16 items-start">
           <div className="md:col-span-4">
             <div className="font-mono text-primary text-[10px] tracking-[0.35em] uppercase mb-5">
