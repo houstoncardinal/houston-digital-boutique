@@ -190,7 +190,7 @@ function CaseStudyPage() {
             <h2 className="font-serif text-2xl md:text-3xl font-medium tracking-tight leading-[0.95]">{project.name}</h2>
           </div>
           <div className="lg:col-span-9 space-y-5">
-            {project.about.split("\n\n").map((para, i) => (
+            {project.about.split("\n\n").map((para: string, i: number) => (
               <p key={i} className="text-base md:text-lg text-muted-foreground leading-relaxed">{para}</p>
             ))}
           </div>
@@ -199,7 +199,7 @@ function CaseStudyPage() {
 
       {/* STATS STRIP */}
       <div className="grid grid-cols-2 md:grid-cols-4 border-b border-border">
-        {project.stats.map((s) => (
+        {project.stats.map((s: { value: string; label: string }) => (
           <div key={s.label} className="p-8 md:p-10 border-b md:border-b-0 md:border-r last:border-r-0 border-border">
             <div className="font-serif text-3xl md:text-4xl text-gold font-medium tracking-tight">{s.value}</div>
             <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground mt-3">{s.label}</div>
@@ -222,7 +222,7 @@ function CaseStudyPage() {
               <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight leading-[0.95] mb-6">
                 What they needed.
               </h2>
-              {project.challenge.split("\n\n").map((para, i) => (
+              {project.challenge.split("\n\n").map((para: string, i: number) => (
                 <p key={i} className={`text-base md:text-lg text-muted-foreground leading-relaxed${i > 0 ? " mt-4" : ""}`}>{para}</p>
               ))}
             </div>
