@@ -74,7 +74,7 @@ export function ProcessQuest() {
   const progress = Math.round((totalXp / maxXp) * 100);
 
   return (
-    <section className="relative px-5 sm:px-8 md:px-12 lg:px-16 py-20 sm:py-28 border-t border-border emerald-wash overflow-hidden">
+    <section className="relative px-5 sm:px-8 md:px-12 lg:px-16 py-14 sm:py-20 border-t border-border bg-background overflow-hidden">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-32 right-0 h-[28rem] w-[28rem] rounded-full bg-primary/10 blur-[120px]"

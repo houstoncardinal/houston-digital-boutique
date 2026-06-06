@@ -24,17 +24,17 @@ export function AtlasStoryScroll() {
               <span className="block">Partner-led work.</span>
             </h2>
             <p className="mt-8 font-display text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Atlas Houston is a thirteen-person design and engineering studio based in Houston, Texas.
-              No juniors on the wheel. Every engagement is owned by the partner who pitched it.
+              Atlas Houston is a 7-person in-house design and engineering studio based in Houston, Texas.
+              No juniors on the wheel. Every engagement is owned by the senior who pitched it.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
             {[
-              ["13", "Senior team"],
+              ["7", "In-house team"],
               ["07", "Years in Houston"],
-              ["140+", "Texas projects shipped"],
-              ["24/7", "Owner-on-call"],
+              ["500+", "Texas projects shipped"],
+              ["24/7", "Always on-call"],
             ].map(([n, l]) => (
               <div key={l} className="bg-background p-5 sm:p-6">
                 <div className="font-serif text-3xl sm:text-4xl text-gold">{n}</div>
@@ -73,17 +73,24 @@ export function AtlasStoryScroll() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {[
-              ["Web Development", "Custom sites · Portals · E-commerce"],
-              ["App Development", "iOS · Android · React Native"],
-              ["Social Media", "Strategy · Content · Growth"],
-              ["Video Production", "Brand films · Ads · Reels"],
-            ].map(([t, s]) => (
-              <div key={t} className="bg-background p-5 sm:p-6">
-                <div className="font-serif text-xl sm:text-2xl">{t}</div>
+              ["/services/websites", "Web Development", "Custom sites · Portals · E-commerce"],
+              ["/services/mobile-apps", "App Development", "iOS · Android · React Native"],
+              ["/services/social-media", "Social Media", "Strategy · Content · Growth"],
+              ["/services/seo", "SEO & AI Search", "Technical SEO · Local Pack · AI Search"],
+            ].map(([href, t, s]) => (
+              <Link
+                key={t}
+                to={href}
+                className="group block bg-background p-5 sm:p-6 hover:bg-primary/5 hover:border-primary transition-colors border border-transparent"
+              >
+                <div className="font-serif text-xl sm:text-2xl group-hover:text-primary transition-colors">{t}</div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mt-3">
                   {s}
                 </div>
-              </div>
+                <span className="block font-mono text-[10px] text-primary mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Explore →
+                </span>
+              </Link>
             ))}
           </div>
         </div>

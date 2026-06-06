@@ -171,13 +171,13 @@ export function ServiceAreaMap() {
 
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-start mb-10">
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.98] tracking-[-0.02em] text-balance">
-            Greater Houston, <span className="italic text-gold">covered.</span>
+            Greater Houston <span className="italic text-gold">web design, SEO & apps.</span>
           </h2>
           <p className="font-display text-base sm:text-lg text-muted-foreground leading-relaxed lg:pt-4">
-            We build websites, apps, SEO, and branding for businesses in every
-            corner of the Houston metro — and ship the same caliber nationally
-            through our partner studio, Cardinal. Tap any city to explore the
-            packages we offer there.
+            We deliver web design, app development, SEO, and social media
+            management for businesses across every corner of the Houston metro —
+            from The Woodlands to Sugar Land, Katy to Clear Lake. Tap any city
+            to explore the packages we offer there.
           </p>
         </div>
 
@@ -260,18 +260,18 @@ export function ServiceAreaMap() {
           {cities.map((c) => {
             const isActive = c.slug === activeSlug;
             return (
-              <button
+              <Link
                 key={c.slug}
-                type="button"
-                onClick={() => focusCity(c.slug)}
-                className={`px-4 py-2 rounded-full border font-mono text-[10px] tracking-[0.25em] uppercase transition-all ${
+                to="/houston/$city"
+                params={{ city: c.slug }}
+                className={`px-4 py-2 border font-mono text-[10px] tracking-[0.25em] uppercase transition-all ${
                   isActive
                     ? "bg-primary text-primary-foreground border-primary"
                     : "bg-background/40 text-muted-foreground border-border hover:border-primary hover:text-primary"
                 }`}
               >
                 {c.shortName}
-              </button>
+              </Link>
             );
           })}
         </div>

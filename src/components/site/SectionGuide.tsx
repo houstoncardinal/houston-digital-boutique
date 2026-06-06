@@ -5,8 +5,9 @@ const STOPS: { id: string; num: string; label: string; sub: string }[] = [
   { id: "services", num: "02", label: "What we do", sub: "Web · apps · social · video" },
   { id: "where", num: "03", label: "Where we work", sub: "Greater Houston & nationwide" },
   { id: "process", num: "04", label: "How we work", sub: "Listen → ship → rank" },
-  { id: "purpose", num: "05", label: "Why it matters", sub: "Outcomes, not deliverables" },
-  { id: "begin", num: "06", label: "Begin", sub: "Book a 15-min discovery call" },
+  { id: "seo-audit", num: "05", label: "Free SEO Audit", sub: "Instant website health check" },
+  { id: "purpose", num: "06", label: "Why it matters", sub: "Outcomes, not deliverables" },
+  { id: "begin", num: "07", label: "Begin", sub: "Book a 15-min discovery call" },
 ];
 
 export function SectionGuide() {
@@ -24,11 +25,11 @@ export function SectionGuide() {
             </p>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1] tracking-[-0.02em] max-w-3xl mb-10">
-            Six stops. <span className="italic text-gold">One clear story.</span>
+            Seven stops. <span className="italic text-gold">One clear story.</span>
           </h2>
         </Reveal>
 
-        <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
+        <ol className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-border border border-border">
           {STOPS.map((s, i) => (
             <li key={s.id} className="bg-background">
               <a

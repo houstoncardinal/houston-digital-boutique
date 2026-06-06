@@ -14,17 +14,24 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as HoustonRouteImport } from './routes/houston'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as WorkSlugRouteImport } from './routes/work.$slug'
 import { Route as ServicesWebsitesRouteImport } from './routes/services.websites'
+import { Route as ServicesVideoProductionRouteImport } from './routes/services.video-production'
+import { Route as ServicesSocialMediaRouteImport } from './routes/services.social-media'
 import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesMobileAppsRouteImport } from './routes/services.mobile-apps'
 import { Route as ServicesCloudHostingRouteImport } from './routes/services.cloud-hosting'
 import { Route as ServicesBrandingRouteImport } from './routes/services.branding'
 import { Route as HoustonCityRouteImport } from './routes/houston.$city'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AdminSupportRouteImport } from './routes/admin.support'
 import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
 import { Route as AdminPaymentsRouteImport } from './routes/admin.payments'
@@ -56,6 +63,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
@@ -64,6 +76,11 @@ const AuthRoute = AuthRouteImport.update({
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -76,14 +93,34 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ServicesRoute,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AdminRoute,
 } as any)
+const WorkSlugRoute = WorkSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => WorkRoute,
+} as any)
 const ServicesWebsitesRoute = ServicesWebsitesRouteImport.update({
   id: '/websites',
   path: '/websites',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesVideoProductionRoute = ServicesVideoProductionRouteImport.update({
+  id: '/video-production',
+  path: '/video-production',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSocialMediaRoute = ServicesSocialMediaRouteImport.update({
+  id: '/social-media',
+  path: '/social-media',
   getParentRoute: () => ServicesRoute,
 } as any)
 const ServicesSeoRoute = ServicesSeoRouteImport.update({
@@ -110,6 +147,11 @@ const HoustonCityRoute = HoustonCityRouteImport.update({
   id: '/$city',
   path: '/$city',
   getParentRoute: () => HoustonRoute,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
 } as any)
 const AdminSupportRoute = AdminSupportRouteImport.update({
   id: '/support',
@@ -139,78 +181,100 @@ const AdminClientsRoute = AdminClientsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
   '/auth': typeof AuthRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/work': typeof WorkRoute
+  '/work': typeof WorkRouteWithChildren
   '/admin/clients': typeof AdminClientsRoute
   '/admin/leads': typeof AdminLeadsRoute
   '/admin/payments': typeof AdminPaymentsRoute
   '/admin/projects': typeof AdminProjectsRoute
   '/admin/support': typeof AdminSupportRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/houston/$city': typeof HoustonCityRoute
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
+  '/services/social-media': typeof ServicesSocialMediaRoute
+  '/services/video-production': typeof ServicesVideoProductionRoute
   '/services/websites': typeof ServicesWebsitesRoute
+  '/work/$slug': typeof WorkSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/work': typeof WorkRoute
+  '/work': typeof WorkRouteWithChildren
   '/admin/clients': typeof AdminClientsRoute
   '/admin/leads': typeof AdminLeadsRoute
   '/admin/payments': typeof AdminPaymentsRoute
   '/admin/projects': typeof AdminProjectsRoute
   '/admin/support': typeof AdminSupportRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/houston/$city': typeof HoustonCityRoute
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
+  '/services/social-media': typeof ServicesSocialMediaRoute
+  '/services/video-production': typeof ServicesVideoProductionRoute
   '/services/websites': typeof ServicesWebsitesRoute
+  '/work/$slug': typeof WorkSlugRoute
   '/admin': typeof AdminIndexRoute
+  '/blog': typeof BlogIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
   '/auth': typeof AuthRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/houston': typeof HoustonRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/work': typeof WorkRoute
+  '/work': typeof WorkRouteWithChildren
   '/admin/clients': typeof AdminClientsRoute
   '/admin/leads': typeof AdminLeadsRoute
   '/admin/payments': typeof AdminPaymentsRoute
   '/admin/projects': typeof AdminProjectsRoute
   '/admin/support': typeof AdminSupportRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/houston/$city': typeof HoustonCityRoute
   '/services/branding': typeof ServicesBrandingRoute
   '/services/cloud-hosting': typeof ServicesCloudHostingRoute
   '/services/mobile-apps': typeof ServicesMobileAppsRoute
   '/services/seo': typeof ServicesSeoRoute
+  '/services/social-media': typeof ServicesSocialMediaRoute
+  '/services/video-production': typeof ServicesVideoProductionRoute
   '/services/websites': typeof ServicesWebsitesRoute
+  '/work/$slug': typeof WorkSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/admin'
     | '/auth'
+    | '/blog'
     | '/contact'
     | '/houston'
     | '/services'
@@ -221,17 +285,23 @@ export interface FileRouteTypes {
     | '/admin/payments'
     | '/admin/projects'
     | '/admin/support'
+    | '/blog/$slug'
     | '/houston/$city'
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
     | '/services/seo'
+    | '/services/social-media'
+    | '/services/video-production'
     | '/services/websites'
+    | '/work/$slug'
     | '/admin/'
+    | '/blog/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/auth'
     | '/contact'
     | '/houston'
@@ -242,19 +312,26 @@ export interface FileRouteTypes {
     | '/admin/payments'
     | '/admin/projects'
     | '/admin/support'
+    | '/blog/$slug'
     | '/houston/$city'
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
     | '/services/seo'
+    | '/services/social-media'
+    | '/services/video-production'
     | '/services/websites'
+    | '/work/$slug'
     | '/admin'
+    | '/blog'
     | '/services'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/admin'
     | '/auth'
+    | '/blog'
     | '/contact'
     | '/houston'
     | '/services'
@@ -265,25 +342,32 @@ export interface FileRouteTypes {
     | '/admin/payments'
     | '/admin/projects'
     | '/admin/support'
+    | '/blog/$slug'
     | '/houston/$city'
     | '/services/branding'
     | '/services/cloud-hosting'
     | '/services/mobile-apps'
     | '/services/seo'
+    | '/services/social-media'
+    | '/services/video-production'
     | '/services/websites'
+    | '/work/$slug'
     | '/admin/'
+    | '/blog/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AdminRoute: typeof AdminRouteWithChildren
   AuthRoute: typeof AuthRoute
+  BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   HoustonRoute: typeof HoustonRouteWithChildren
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  WorkRoute: typeof WorkRoute
+  WorkRoute: typeof WorkRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -323,6 +407,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
@@ -335,6 +426,13 @@ declare module '@tanstack/react-router' {
       path: '/admin'
       fullPath: '/admin'
       preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -351,6 +449,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/admin/': {
       id: '/admin/'
       path: '/'
@@ -358,11 +463,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminIndexRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/work/$slug': {
+      id: '/work/$slug'
+      path: '/$slug'
+      fullPath: '/work/$slug'
+      preLoaderRoute: typeof WorkSlugRouteImport
+      parentRoute: typeof WorkRoute
+    }
     '/services/websites': {
       id: '/services/websites'
       path: '/websites'
       fullPath: '/services/websites'
       preLoaderRoute: typeof ServicesWebsitesRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/video-production': {
+      id: '/services/video-production'
+      path: '/video-production'
+      fullPath: '/services/video-production'
+      preLoaderRoute: typeof ServicesVideoProductionRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/social-media': {
+      id: '/services/social-media'
+      path: '/social-media'
+      fullPath: '/services/social-media'
+      preLoaderRoute: typeof ServicesSocialMediaRouteImport
       parentRoute: typeof ServicesRoute
     }
     '/services/seo': {
@@ -399,6 +525,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/houston/$city'
       preLoaderRoute: typeof HoustonCityRouteImport
       parentRoute: typeof HoustonRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/admin/support': {
       id: '/admin/support'
@@ -458,6 +591,18 @@ const AdminRouteChildren: AdminRouteChildren = {
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 interface HoustonRouteChildren {
   HoustonCityRoute: typeof HoustonCityRoute
 }
@@ -474,6 +619,8 @@ interface ServicesRouteChildren {
   ServicesCloudHostingRoute: typeof ServicesCloudHostingRoute
   ServicesMobileAppsRoute: typeof ServicesMobileAppsRoute
   ServicesSeoRoute: typeof ServicesSeoRoute
+  ServicesSocialMediaRoute: typeof ServicesSocialMediaRoute
+  ServicesVideoProductionRoute: typeof ServicesVideoProductionRoute
   ServicesWebsitesRoute: typeof ServicesWebsitesRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
@@ -483,6 +630,8 @@ const ServicesRouteChildren: ServicesRouteChildren = {
   ServicesCloudHostingRoute: ServicesCloudHostingRoute,
   ServicesMobileAppsRoute: ServicesMobileAppsRoute,
   ServicesSeoRoute: ServicesSeoRoute,
+  ServicesSocialMediaRoute: ServicesSocialMediaRoute,
+  ServicesVideoProductionRoute: ServicesVideoProductionRoute,
   ServicesWebsitesRoute: ServicesWebsitesRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
@@ -491,16 +640,38 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
   ServicesRouteChildren,
 )
 
+interface WorkRouteChildren {
+  WorkSlugRoute: typeof WorkSlugRoute
+}
+
+const WorkRouteChildren: WorkRouteChildren = {
+  WorkSlugRoute: WorkSlugRoute,
+}
+
+const WorkRouteWithChildren = WorkRoute._addFileChildren(WorkRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AdminRoute: AdminRouteWithChildren,
   AuthRoute: AuthRoute,
+  BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   HoustonRoute: HoustonRouteWithChildren,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  WorkRoute: WorkRoute,
+  WorkRoute: WorkRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

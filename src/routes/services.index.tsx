@@ -6,17 +6,17 @@ export const Route = createFileRoute("/services/")({
   component: ServicesHub,
   head: () => ({
     meta: [
-      { title: "Services — Apps, Websites, Branding, Cloud, SEO | Atlas Houston Houston" },
+      { title: "Services — Web, Apps, Social, Video, Branding, SEO | Atlas Houston" },
       {
         name: "description",
         content:
-          "Five disciplines, one senior Houston team: mobile apps, websites, brand identity, managed cloud hosting, and engineered SEO. Full lifecycle, fixed-fee proposals.",
+          "Seven disciplines, one senior Houston team: mobile apps, websites, social media management, video production, brand identity, managed cloud hosting, and engineered SEO. Full lifecycle, fixed-fee proposals.",
       },
-      { property: "og:title", content: "Services — Atlas Houston Houston" },
+      { property: "og:title", content: "Services — Atlas Houston" },
       {
         property: "og:description",
         content:
-          "Apps, websites, branding, cloud and a signature SEO practice. Built and operated by a Houston-based senior team.",
+          "Apps, websites, social media, video, branding, cloud and a signature SEO practice. Built and operated by a Houston-based senior team.",
       },
       { property: "og:url", content: "/services" },
     ],
@@ -43,6 +43,22 @@ const services = [
   },
   {
     n: "03",
+    to: "/services/social-media" as const,
+    label: "Social Media Management",
+    tagline: "Strategy, content, video, paid social — all in-house.",
+    body: "4.1× avg engagement lift. Instagram, TikTok, LinkedIn, Meta Ads managed by a Houston team that also builds the landing pages.",
+    bullets: ["Content strategy", "Reels + TikTok production", "Meta & LinkedIn Ads", "Monthly revenue report"],
+  },
+  {
+    n: "04",
+    to: "/services/video-production" as const,
+    label: "Video Production",
+    tagline: "Brand films, Reels, commercials, motion graphics.",
+    body: "4K production, in-house editing, 2-week turnaround for social content. From a 15-second Reel to a 10-minute brand documentary.",
+    bullets: ["Brand films", "Social Reels + TikTok", "Commercial ad creative", "Animation + motion graphics"],
+  },
+  {
+    n: "05",
     to: "/services/branding" as const,
     label: "Branding & Identity",
     tagline: "Naming, marks, voice, packaging, livery.",
@@ -50,7 +66,7 @@ const services = [
     bullets: ["Naming + USPTO clearance", "Figma brand libraries", "Packaging + signage", "Voice + messaging"],
   },
   {
-    n: "04",
+    n: "06",
     to: "/services/cloud-hosting" as const,
     label: "Cloud, Hosting & LTS Support",
     tagline: "99.99% uptime. 24/7 on-call. Houston-based.",
@@ -58,7 +74,7 @@ const services = [
     bullets: ["AWS · Cloudflare · Fly", "Daily encrypted backups", "Status page per client", "SOC2 controls · HIPAA BAA"],
   },
   {
-    n: "05",
+    n: "07",
     to: "/services/seo" as const,
     label: "SEO & AI Search",
     tagline: "The first result is engineered.",
@@ -77,13 +93,13 @@ function ServicesHub() {
         <div className="relative max-w-7xl">
           <div className="flex items-center gap-4 mb-10 animate-reveal">
             <span className="font-mono text-primary text-[11px] tracking-[0.35em]">
-              SERVICES INDEX — FIVE DISCIPLINES
+              SERVICES INDEX — SEVEN DISCIPLINES
             </span>
             <span className="h-px flex-1 max-w-32 bg-border" />
           </div>
           <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] font-medium tracking-[-0.025em] leading-[0.9] text-balance mb-12">
             One senior team. <br />
-            <span className="text-gold italic">Five disciplines.</span> <br />
+            <span className="text-gold italic">Seven disciplines.</span> <br />
             Full lifecycle.
           </h1>
           <Reveal delay={400} className="max-w-3xl">

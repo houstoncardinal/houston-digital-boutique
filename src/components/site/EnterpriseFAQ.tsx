@@ -3,7 +3,7 @@ import { Reveal } from "@/components/site/Reveal";
 const FAQ: { q: string; a: string }[] = [
   {
     q: "Who actually does the work?",
-    a: "Hunain Qureshi (founder & CEO) and a 13-person senior team of engineers, designers, and producers — all based out of Houston. No juniors on the wheel, no offshore handoffs. The partner who pitches the work also ships it.",
+    a: "We are a 7-person in-house senior team of engineers, designers, and producers — all based in Houston. No juniors on the wheel, no offshore handoffs. The senior who pitches the work also ships it.",
   },
   {
     q: "How fast can a project ship?",
@@ -33,12 +33,12 @@ export function EnterpriseFAQ() {
       aria-label="Frequently asked questions"
       className="relative border-t border-border bg-background"
     >
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 md:px-12 lg:px-16 py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 md:px-12 lg:px-16 py-14 sm:py-20">
         <Reveal>
           <div className="flex items-center gap-4 mb-6">
             <span className="block h-px w-12 bg-primary" />
             <p className="font-mono text-[10px] sm:text-[11px] tracking-[0.35em] uppercase text-primary">
-              06 — Common questions
+              08 — Common questions
             </p>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[0.98] tracking-[-0.02em] max-w-3xl mb-12">
