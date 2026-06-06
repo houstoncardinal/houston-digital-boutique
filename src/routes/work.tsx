@@ -179,17 +179,16 @@ function ProjectCard({ project, reversed }: { project: Project; reversed: boolea
       <div className={`relative overflow-hidden ${reversed ? "lg:order-2" : ""}`}>
         <ScreenshotCard project={project} />
         {/* Overlay link hint on hover */}
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/work/$slug"
+          params={{ slug: project.slug }}
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center bg-background/30 backdrop-blur-[1px]"
-          aria-label={`Visit ${project.name} website`}
+          aria-label={`View ${project.name} case study`}
         >
           <span className="bg-background/90 border border-border font-mono text-[10px] uppercase tracking-[0.25em] px-4 py-2.5 text-foreground">
-            View Live Site ↗
+            View Case Study →
           </span>
-        </a>
+        </Link>
       </div>
 
       {/* Content */}
@@ -217,9 +216,15 @@ function ProjectCard({ project, reversed }: { project: Project; reversed: boolea
           </div>
 
           {/* Company name */}
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-[0.95] mb-4 group-hover:text-primary transition-colors duration-500">
-            {project.name}
-          </h2>
+          <Link
+            to="/work/$slug"
+            params={{ slug: project.slug }}
+            className="block"
+          >
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-[0.95] mb-4 group-hover:text-primary transition-colors duration-500">
+              {project.name}
+            </h2>
+          </Link>
 
           {/* Headline */}
           <p className="font-display text-base text-muted-foreground italic mb-5 leading-relaxed">
